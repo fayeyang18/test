@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>严选我的订单</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+		<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var utel = window_request_paramter("utel");
+			var p_id = window_request_paramter("p_id");
+		</script>
+		<style type="text/css">
+			
+			
+			#shouye{
+				/*position: relative;*/
+				top: 10px;
+				width: 100px;
+				height: 20px;
+				
+			}
+			#content{
+				width: 1090px;
+				margin: 0 auto;
+				height: 900px;
+				overflow: hidden;
+			}
+			.chose{
+				color: #000000;
+				
+			}
+			.chose:hover{
+				color: #DEB887;
+			}
+			
+			#side{
+				position: relative;
+				background-color: white;
+				bottom: 408px;
+				width: 180px;
+				height: 800px;
+				top: 0px;
+				border: #CCCCCC 1px solid;
+				/*overflow: scroll;*/
+				margin-top: 30px;
+				text-align: center;
+				
+			}
+			
+			#zhanghao{
+				margin-top: 30px;
+				
+			}
+			
+			#jiaoyi{
+				margin-top: 30px;
+			}
+			
+			#fuwu{
+				margin-top: 30px;
+			}
+			
+			.side_chose{
+				display: inline-block;
+				margin-top: 13px;
+			}
+			
+			#key{
+				height: 100px;
+				width: 800px;
+				
+				position: relative;
+				top: -800px;
+				left: 185px;
+				line-height: 50px;
+			}
+			
+			
+			#if{
+				width:800px;
+				height:800px;
+				
+				position: relative;
+				left: 185px;
+				top:  -800px;
+				
+			}
+			
+			#sousuokuang{
+				color: #414141;
+				background-color: #D8CEBC;
+				border: solid 1px #A9A9A9;
+				width: 30px;
+				height: 20px;
+				font-size: 15px;
+				margin-left: -5px;
+			}
+			.keys{
+				font-size: 16px;
+				color: #414141;
+				
+			}
+			.keys:hover{
+				color: #B4A078;
+			}
+			
+			#zhapian {
+				background-color: rgb(248, 245, 240);
+				width: 800px;
+				height: 30px;
+				line-height: 30px;
+				
+				border: #CCCCCC 1px solid;
+				text-decoration: underline;
+				font-size: 12px;
+				color: #DEB887;
+			}
+			#zhapian a{
+				margin-left: 30px;
+			}
+			
+			#zhapian :hover{
+				text-decoration: none;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="header">
+			<div id="top">
+				<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+					<p>好的生活，没那么贵</p>
+				</div>
+				<div id="nav">
+					<div class="title">
+						<a href="#" class="title-nav">我的订单</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">会员</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">甄选家</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">企业采购</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">客户服务</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">APP</a>
+					</div>
+				</div>
+			</div>
+			<div id="low">
+				<div>
+					<a href="index.html" class="tab-logo"></a>
+				</div>
+				<div class="search">
+					<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+					<a class="icon-search" href="#" id="searchid"></a>
+					<a class="icon-cart" href="#"> </a>
+					<a href="shopping_cart.html" class="cart-num">{{num.num}}</a>
+				</div>
+				<div class="wrap wrap-display wrap0">
+						<div class="m-hot-search-words">
+								<ul class="search_list">
+									<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+									<div class="delete history">
+									</div>
+									<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+										<li class="search_list_item hot">鞋包3件85折</li>
+										<li class="search_list_item hot">午睡神器特惠</li>
+										<li class="search_list_item hot">床垫</li>
+										<li class="search_list_item hot">服饰买2免1</li>
+										<li class="search_list_item hot">反季特惠</li>
+								</ul>
+						</div>
+				</div>
+			</div>
+			<div id="nav-1">
+			<div id="main-nav">
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="#" class="topLevel" >首页</a>
+						</li>
+						<li class="nav-item" v-for="nav in firstnav" >
+							<a class="topLevel" href="#">{{nav.name}}</a>
+							<ul class="card-list">
+								<div class="card">
+									<li class="item" v-for="nav_2 in nav.card_list">
+										<a class="nav-subCate" href="javascript:;">
+											<img class="icon" v-bind:src="nav_2.img" />
+											<p class="text">{{nav_2.card_name}}</p>
+										</a>
+									</li>
+									
+								</div>
+							</ul>
+						</li>	
+						
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		</div>
+    <hr style="color: #F5F5DC;" />
+		
+		<div id="content">
+				<div id="shouye">
+							<p style="color: #A9A9A9;font-size: 12px;"> 
+							    <a href="#" class="chose side_chose" style="font-size: 12px;">首页</a> 
+								   > 订单管理</p>
+						</div>
+							
+				<div id="side">
+					
+					<div id="zhanghao">
+							<a href="#" style="font-size: 15px;font-weight: 700;">帐号管理 </a><br/>
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">个人中心 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">消息通知 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">账号信息 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">地址管理 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">账号安全 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的积分 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的收藏 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的足迹 </a><br />
+							<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的甄选家 </a>
+								</div>
+					
+					<div id="jiaoyi">
+						<a href="#" style="font-size: 15px;font-weight: 700;">交易管理 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;color: #DEB887;"class="chose side_chose">订单管理 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的红包 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">优惠券 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">礼品卡 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">优先购 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">我的众筹 </a>
+					</div>
+		
+					<div id="fuwu">
+						<a href="#" style="font-size: 15px;font-weight: 700;">服务中心 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">售后记录 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">价格保护 </a><br />
+						<a href="#" style="font-size: 13px;font-weight: 500;"class="chose side_chose">帮助中心 </a><br />
+					</div>
+				</div>
+				
+				
+				<div id="key">
+					<li>&emsp;<a href="#" class="keys"  >全部订单</a>&emsp;&nbsp;<font color="#CCCCCC"> | </font> &nbsp;&emsp;<a href="#" class="keys"  >待付款</a>&emsp;&nbsp;<font color="#CCCCCC"> | </font>&nbsp;&emsp;<a href="#" class="keys"  >待发货</a>&emsp;&nbsp;<font color="#CCCCCC"> | </font>&nbsp;&emsp;<a href="#" class="keys"  >已发货</a>&emsp;&nbsp;<font color="#CCCCCC"> | </font>&nbsp;&emsp;<a href="#" class="keys"  >待评价&emsp; &emsp;&emsp;&nbsp;&nbsp;&nbsp;<input type="text" style="width: 200px;height: 20px;" placeholder="输入商品名称或订单号搜索" /></a> <a href="#" id="sousuokuang">搜索</a> </li>
+					
+					<div id="zhapian">
+							<a href="#" style="color: #DEB887;" >  📡 防诈骗公告</a>
+					</div>
+				</div>
+				
+				
+				<div id="if">
+					<iframe src="" name="mainframe" style="border-color: #A9A9A9; border:1px solid #A9A9A9"  width="800" height="700"></iframe>
+				</div>
+				
+		</div>
+		
+		<hr style="color: #F5F5DC;" />
+
+	        <div id="footer1">
+				<div class="foot-ensure-item ensure-item11">
+					<h4 class="text-title">客户服务</h4>
+					<div class="ensure-item1">
+						<div class="ensure-item1-content">
+							<div id="image_s">
+								<img src="images/service.png"width="40px" height="40px" >
+								<p>在线客服</p>
+							</div>
+						</div>
+						<div class="ensure-item1-content">
+							<div id="image_s">
+								<img src="images/消息.png"width="40px" height="40px" >
+								<p>用户反馈</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="foot-ensure-item">
+					<h4 class="text-title">何为严选</h4>
+						<div id="ensure-item2">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+						</div>
+					
+						<div id="guanzhu">
+							关注我们：
+						</div>
+						<div id="wqx">
+							<img src="images/wtx.png" height="32px" >
+						</div>
+				</div>
+				<div class="foot-ensure-item ensure-item33">
+					<h4 class="text-title">扫码下载严选APP</h4>
+						<div id="ensure-item3">
+							<img src="images/qr.png"  >
+						</div>
+				</div>
+			</div>
+			<div class="footer2">
+				<div class="footer2-ensure-item">
+					<div class="first-row">
+						<ul class="ensure">
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f1"></i>
+									<p class="text2">30天无忧退货</p>
+								</div>
+							</li>
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f2"></i>
+									<p class="text2">满88元免邮费</p>
+								</div>
+							</li>
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f3"></i>
+									<p class="text2">网易品质保证</p>
+								</div>
+							</li>
+						</ul>
+						<hr>
+						<div class="m-siteInfo">
+							<nav class="nav-1">
+								<a class="text2 text2-color" href="javascript:;">关于我们</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">售后服务</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">商务合作</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">企业采购</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">友情链接</a>
+							</nav>
+							<p class="copyright">
+								网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+							</p>
+							<a class="businessAdmin" href="javascript:;">
+								<img src="./images/admin.gif" width="36" height="39" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/动态菜单.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/标题固定.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+</html>

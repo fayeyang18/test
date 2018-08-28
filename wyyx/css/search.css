@@ -1,0 +1,295 @@
+.xiezicontent{
+	width: 1308px;
+	height: 4750px;
+	background-color: #F5F5F5;
+	margin: 0 auto;
+}
+.xiaodaohang{
+	margin-left: 109px;
+	width: 1090px;
+	height: 52px;
+	background-color: #F5F5F5;
+	padding-top:20px;
+}
+.xiaodaohang a{
+	width: 24px;
+	height: 17px;
+	font-size: 12px;
+	color: black;
+	text-decoration: none;
+}
+.xiaodaohang span{
+	width: 5px;
+	height: 11px;
+}
+.xieziarea{
+	width: 1090px;
+	height:4200px;
+	margin-top:0px;
+	margin-left: 109px;
+	background-color: white;
+	padding-top: 15px;
+	padding-left: 15px;
+}
+.category{
+	margin-top: 15px;
+	margin-left: 40px;
+	width: 1010px;
+	height: 40px;
+	border-bottom: 1px dashed   #E8E8E8;
+}
+.category span{
+	font-size: 14px;
+	padding-left: 0px;
+}
+.category a{
+	color: black;
+	text-decoration: none;
+	font-size: 14px;
+	margin-left: 40px;
+}
+.xieziarea ul li{
+	
+	display: inline-block;
+	padding-left: 15px;
+	height: 361px;
+	width: 245px;
+	text-align: center;
+	margin-top:30px;
+}
+.goods {
+	position: relative;
+	
+}
+.pic{
+	overflow: hidden;
+	background-color: #F4F4F4;
+}
+.goods img{
+	cursor: pointer;
+	transition: all 0.6s;
+	
+}
+.goods img:hover{
+	transform: scale(1.1);
+}
+.xiangqing span{
+	display: block;
+	margin:5px auto;
+}
+
+
+.word_on_xiezi{
+	width: 50px;
+	height: 20px;
+	background-color: #F4F0EA;
+	border-color:#B8A685 ;
+	font-size: 12px;
+	color: #B8A685;
+	float: left;
+	margin: 0 auto;
+	position: absolute;
+	z-index: 1;
+	top: 10px;
+	left:30px;
+	border-radius: 5px;
+}
+.name5{  
+	height: 20px;
+	width: 34px;
+	font-size: 12px;
+	color: white;
+	background-color: #E36844;
+	}
+.name6{
+	height: 18px;
+	width: 120px;
+	color: #333333;
+	font-size: 13px;
+}
+.name7{
+	height: 20px;
+	width: 25px;
+	color: #D7282D;
+	font-size: 13px;
+	font-family: "微软雅黑",verdana;
+}
+.name8{
+	font-size: 13px;
+	color:#999999;
+	margin-top:10px;
+}
+.name9{  
+	height: 20px;
+	width: 34px;
+	font-size: 12px;
+	background-color:white;
+	}
+
+.xiangqing hr{
+	color:#E6EBE8;
+	width:100px;
+	margin-left: 72.5px;
+}
+.cnxh{
+	margin-top:30px;
+	margin-left: 109px;
+	
+	
+}
+.lun{
+	width: 300px;
+	height: 100px;
+	border: 1px solid #E8E8E8;
+
+}
+.lun-item{
+	margin-left: 30px;
+	margin-right: 28px;
+	margin-top: 24px;
+	width: 210px;
+	height: 315px;
+	float: left;
+}
+.limg{
+	overflow: hidden;
+}
+.limg:hover{
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+.lcontent{
+	width: 210px;
+	height: 68px;
+	border-bottom: 1px solid #E8E8E8;
+	margin-top: 10px;
+}
+.lcontent a:hover{
+	color: #B4A078;
+}
+.ljiage{
+	width: 210px;
+	text-align: center;
+	color: #D62525;
+}
+.lpinming{
+	width: 210px;
+	text-align: center;
+}
+/*整体去除内外边距*/
+	* {
+		margin: 0;
+		padding:0;
+	}
+	/*取消列表的图标内容*/
+	ul{
+		list-style: none;
+	}
+	/*对整体部分的控制，浏览图片的窗口*/
+	.banner{
+		width: 1090px;
+		height: 350px;
+		margin-bottom: 30px;
+		margin-top: 0px;
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+		background-color: white;
+	}
+	/*图片的初步设置后面的动态内容会在js中实现*/
+	.img{
+		width:100%;
+		height: 320px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	/*让每张图片向左浮动*/
+	.img li{
+		float: left;
+	}
+	/*按钮部分初始不可见*/
+	.btn{
+		display: none;
+	}
+	/*按钮形状设计*/
+	/*.btn span{
+		display: block;
+		left: 0px;
+		width: 50px;
+		height: 50px;
+		cursor:pointer;
+	}*/
+	/*上一个设计*/
+	.btn .prev{
+		position: absolute;
+		left: 2%;
+		top: 50%;
+		margin-top: -50px;
+	}
+	/*下一个设计*/
+	.btn .next{
+		position: absolute;
+		right: 2%;
+		top: 50%;
+		margin-top: -50px;
+	}
+	.hide{
+		display: none;
+	}
+	.img div{
+		float:left;
+	}
+	#like{
+		width: 1070px;
+		height: 50px;
+		margin:0,0;
+		background-color: white;
+		line-height: 50px;
+		padding-left: 20px; 
+	}
+	#like h{
+		line-height: 50px;
+		font-size: 20px;
+	}
+	.tiaoye{
+		width: 247px;
+		height: 40px;
+		text-align: center;
+		margin-top:50px;
+		margin-left:380px;
+		border-top: 1px solid #E6E6E6;
+		border-left: 1px solid #E6E6E6;
+		border-bottom: 1px solid #E6E6E6;
+	}
+.page1{
+	width: 82px;
+	height: 40px;
+	display:inline-block;
+	line-height: 40px;
+	text-align: center;
+	border-right: 1px solid #E6E6E6;
+}
+.page2{
+	width: 32px;
+	height: 40px;
+	display:inline-block;
+	line-height: 40px;
+	text-align: center;
+	border-right: 1px solid #E6E6E6;
+}
+.xzjia input{
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+.xzjia{
+	border: 1px solid #E6E6E6;
+	display: inline-block;
+}
+.fenlei{
+	color: #999999;
+}
+.tiaoye span{
+	font-size: 12px;
+}

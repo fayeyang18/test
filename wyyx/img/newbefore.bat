@@ -1,0 +1,1 @@
+@echo off for /f "delims=" %%f in ('dir/b/s/a-d *.*') do (if not "%%~nxf"=="%0" ren "%%f" "极客青年%%~nxf")

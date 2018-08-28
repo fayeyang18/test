@@ -1,0 +1,562 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: 15px;
+}
+ul,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+#zhengti{
+	width: 1090px;
+	height: 19050px;
+	margin: 0 auto;
+	z-index: 10;
+}
+.xiaodaohang{
+	width: 1090px;
+	height: 52px;
+	line-height: 52px;
+}
+.xuanxiang{
+	width: 43px;
+	height: 16px;
+	font-size:12px ;
+}
+.xuanxiang a{
+	font-size:12px ;
+	padding-top: 30px;
+}
+.m-detail{
+	width: 1090px;
+	height: 19050px;
+}
+//顶部细节描述
+.detailHead{
+	width: 1090px;
+	height: 562px;
+}
+.clear{
+	clear: both;
+}
+.detailLeft{
+	width: 524px;
+	height: 440px;
+	float: left;
+}
+.detailRight{
+	width: 566px;
+	height: 406px;
+	float: left;
+	z-index: -1;
+}
+.detailLeft-1{
+	width: 428px;
+	height: 428px;
+	float: left;
+	position: relative;
+	z-index: 1;
+}
+.detailLeft-1 iframe{
+	background-color: #F4F4F4;
+}
+.detailLeft-2{
+	width: 96px;
+	height: 428px;
+	margin-left: 0;
+	float: left;
+	position: relative;
+    right: -10px;
+	z-index: 1;
+}
+.detailLeft-2 ul li{
+	margin-top: 8px;
+}
+.detailLeft-2 ul li img{
+	background-color: #F4F4F4;
+}
+.detailLeft-2 ul li img:hover{
+	border: 2px solid #B4A078;
+}
+.intro{
+	width: 504px;
+	height: 78px;
+	position: relative;
+	left: 50px;
+	z-index: 1;
+}
+.name{
+	width: 504px;
+	height: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 7px;
+	line-height: 20px;
+}
+.desc{
+	width: 300px;
+	height: 51px;
+	font-size: 12px;
+	padding-bottom: 20px;
+	padding-top: 13px;
+	line-height: 18px;
+	color: #999999;
+}
+.price{
+	width: 504px;
+	height: 113px;
+	background-color: #F5F3EF;
+	position: relative;
+	left: 50px ;
+	z-index: 1;
+}
+.sale-price{
+	width: 504px;
+	height: 45px;
+	color: #92927B;
+}
+.label-1{
+	width: 55px;
+	font-size: 13px;
+	margin-left: 10px;
+	margin-top: 20px;
+	display: inline-block;
+	height: 30px;
+}
+.rmb{
+	font-size: 18px;
+	color: #d7282d;
+	margin-left: 10px;
+	line-height: 30px;
+	font-weight: 700;
+}
+.jiage{
+	font-size: 28px;
+	color: #D7282D;
+	margin-left: 10px;
+	line-height: 30px;
+	font-weight: 700;
+}
+.sale-more{
+	width: 504px;
+	height: 24px;
+}
+.m1{
+	font-size: 13px;
+	color: #92927B;
+	margin-left: 10px;
+}
+.m2{
+	font-size: 13px;
+	color: #92927B;
+	margin-left: 30px;
+}
+.s1{
+	font-size: 13px;
+	color: #92927B;
+	margin-left: 10px;
+}
+.s2 {
+	font-size: 13px;
+	color: #92927B;
+	margin-left: 30px;
+	margin-top: 5px;
+	display: inline-block;
+}
+.s2 span{
+	margin-right: 8px;
+}
+.yanse{
+	line-height: 30px;
+	margin-left: 60px;
+}
+.y1{
+	color: #92927B;
+	font-size: 13px;
+    float: left;
+	display: inline-block;
+	line-height: 26px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+.y2{
+	display: inline-block;
+	margin-top: 16px;
+	margin-left: 12px;
+	
+}
+.y2 img{
+	margin-right: 12px;
+	background-color: #F4F4F4;
+}
+.y3{
+	width:46px ;
+	display: inline-block;
+	border: 1px solid #B4A078;
+	
+}
+.guige{
+	margin-left: 60px;
+	margin-top: 10px;
+}
+.g1{
+	color: #92927B;
+	font-size: 13px;
+}
+.g2{
+	display: inline-block;
+	/*width: 40px;*/
+	border: 1px solid #DDDDDD;
+	text-align: center;
+	margin-left:10px ;
+}
+.g3{
+	border: 1px solid #B4A078;
+}
+.shuliang{
+	margin-left: 60px;
+	margin-top: 30px;
+	
+}
+.count{
+	margin-left: 10px;
+}
+.count1 a{
+	text-align: center;
+	display: inline-block;
+	width: 36px;
+	height: 30px;
+	border: 1px solid #DDDDDD;
+	line-height: 30px;
+	margin-left: 5px;
+	color: #92927B;
+}
+.count2{
+	text-align: center;
+	display: inline-block;
+	width: 70px;
+	height: 30px;
+	/*border: 1px solid #DDDDDD;*/
+	line-height: 30px;
+	margin-left: 5px;
+	color: #92927B;
+}
+.count3{
+	text-align: center;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	color: #92927B;
+}
+.lijigoumai a{
+	width: 168px;
+	height: 50px;
+	background-color: #F5F3EF;
+	text-align: center;
+	line-height: 50px;
+	color: #B4A078;
+	border: 1px solid #B4A078;
+	float: left;
+	margin-left: 60px;
+	margin-top: 20px;
+	font-size: 18px;
+}
+.lijigoumai a:hover{
+	background-color: white;
+}
+.jiagou a{
+	width: 168px;
+	height: 50px;
+	background-color: #B4A078;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	float: left;
+	margin-left: 10px;
+	margin-top: 20px;
+	font-size: 18px;
+}
+.jiagou a:hover{
+	background-color:#B6A686;
+}
+.jiagou img{
+	margin-top: 10px;
+	margin-right: 8px;
+	position: relative;
+	top: 5px;
+	left: 5px;
+}
+.shoucang a{
+	width: 48px;
+	height: 47px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 20px;
+	text-align: center;
+	border: 1px solid #A3A3A3;
+}
+.shoucang span{
+	display: inline-block;
+	width: 48px;
+	height: 24px;
+	line-height: 28px;
+}
+.shoucang p{
+	width: 48px;
+	height: 23px;
+	color: #A3A3A3;
+	text-align: center;	
+	line-height: 23px;
+	border-top: none;
+	font-size: 14px;
+}
+.lun{
+	width: 300px;
+	height: 100px;
+	border: 1px solid #E8E8E8;
+
+}
+.lun-item{
+	margin-left: 28px;
+	margin-right: 24px;
+	margin-top: 24px;
+	width: 210px;
+	height: 315px;
+	float: left;
+}
+.limg{
+	overflow: hidden;
+}
+.limg:hover{
+	transform: scale(1.1);
+	transition: 0.5s;
+}
+.lcontent{
+	width: 210px;
+	height: 68px;
+	border-bottom: 1px solid #E8E8E8;
+	margin-top: 10px;
+}
+.lcontent a:hover{
+	color: #B4A078;
+}
+.ljiage{
+	width: 210px;
+	text-align: center;
+	color: #D62525;
+}
+.lpinming{
+	width: 210px;
+	text-align: center;
+}
+
+.detailBody{
+	width: 1090px;
+	height: ;
+}
+.detailBodyLeft{
+	width: 750px;
+	height: 1957px;
+	float: left;
+}
+.label{
+	width: 750px;
+	height: 44px;
+	background-color: #F5F5F5;
+}
+.xiangqing{
+	width: 170px;
+	font-size: 14px;
+	text-align: center;
+	line-height:40px ;
+	background-color: white;
+	border-top: 3px solid #B4A078;
+	float: left;
+}
+.pingjia{
+	width: 170px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 44px;
+	float: left;
+	border: 1px solid #E8E8E8;
+}
+.jieshao{
+	width: 750px;
+	height: 18023px;
+}
+.li-item{
+	margin-top: 10px;
+	width: 730px;
+	height: 41px;
+	padding: 1px 10px;
+	border-bottom: 1px dashed #999999;
+}
+.lname{
+	float: left;
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+	line-height: 24px;
+	width: 105px;
+}
+.value{
+	float: left;
+	display: inline-block;
+	font-size: 14px;
+	text-align: -webkit-match-parent;
+	line-height: 24px;
+	color: #999999;
+	min-width: 50%;
+	padding-left: 24px;
+}
+.tupian{
+	width: 750px;
+	height: 17738px;
+}
+.tupian img{
+	vertical-align: top;
+}
+.detailBodyRight{
+	width: 300px;
+	height: 2654px;
+	float: left;
+	margin-left: 40px;
+}
+.hTitle{
+	background-color:#F5F5F5 ;
+	width: 298px;
+	height: 42px;
+	border-bottom:1px solid #E8E8E8; 
+	line-height: 41px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: 700;
+}
+.hotsell{
+	width: 300px;
+	height: 2101px;
+	border: 1px solid #E8E8E8;
+
+}
+.hitems{
+	margin-left: 24px;
+	margin-right: 24px;
+	margin-top: 24px;
+	width: 210px;
+	height: 315px;
+}
+.hcontent{
+	width: 250px;
+	height: 68px;
+	border-bottom: 1px solid #E8E8E8;
+}
+.hjiage{
+	width: 250px;
+	text-align: center;
+	color: #D62525;
+}
+.hpinming{
+	width: 250px;
+	text-align: center;
+}
+
+	/*整体去除内外边距*/
+	* {
+		margin: 0;
+		padding:0;
+	}
+	/*取消列表的图标内容*/
+	ul{
+		list-style: none;
+	}
+	/*对整体部分的控制，浏览图片的窗口*/
+	.banner{
+		width: 1090px;
+		height: 350px;
+		border: 2px solid #ccc;
+		/*margin-left: 150px;*/
+		position: relative;
+		overflow: hidden;
+		z-index: 1;
+	}
+	/*图片的初步设置后面的动态内容会在js中实现*/
+	.img{
+		width:100%;
+		height: 320px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	/*让每张图片向左浮动*/
+	.img li{
+		float: left;
+	}
+	/*圆点承载部分的设计*/
+	.num{
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		text-align: center;
+		font-size: 0;
+	}
+	/*圆点设计*/
+	.num li{
+		width: 10px;
+		height: 10px;
+		background:rgba(0,0,0,0.5);
+		border-radius: 100%;
+		display: inline-block;
+		margin: 0 5px;
+		cursor: pointer;
+	}
+	/*按钮部分初始不可见*/
+	.btn{
+		display: none;
+	}
+	/*按钮形状设计*/
+	/*.btn span{
+		display: block;
+		left: 0px;
+		width: 50px;
+		height: 50px;
+		cursor:pointer;
+	}*/
+	/*上一个设计*/
+	.btn .prev{
+		position: absolute;
+		left: 2%;
+		top: 50%;
+		margin-top: -50px;
+	}
+	/*下一个设计*/
+	.btn .next{
+		position: absolute;
+		right: 2%;
+		top: 50%;
+		margin-top: -50px;
+	}
+	/*对按妞动态呈现的变换进行类选择器的设计为js代码部分进行铺垫*/
+	.num .active{
+		background-color: #D0C4AF;
+	}
+	.hide{
+		display: none;
+	}
+	.img div{
+		float:left;
+	}
+	#like{
+		float: left;
+		font-size: 17px;
+		width: 1072px;
+		height: 44px;
+		line-height: 44px;
+		padding-left: 22px;
+		background-color: rgb(245, 245, 245);
+	}

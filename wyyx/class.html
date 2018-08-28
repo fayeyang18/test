@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>严选-居家</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+	 <script src="js/jquery-1.8.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/class.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+	<link rel="stylesheet" type="text/css" href="css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+	<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var utel = window_request_paramter("utel");
+		var p_id = window_request_paramter("p_id");
+	</script>
+	<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		
+		<div id="header">
+				<div id="top">
+					<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+						<p>好的生活，没那么贵</p>
+					</div>
+					<div id="nav">
+						<div class="title">
+							<a href="order.html" class="title-nav">我的订单</a>
+						</div>
+						<div class="title">
+							<a href="phone_load.html" class="title-nav">会员</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">甄选家</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">企业采购</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">客户服务</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">APP</a>
+						</div>
+					</div>
+				</div>
+				<div id="low">
+					<div>
+						<a href="index.html" class="tab-logo"></a>
+					</div>
+					<div class="search">
+						<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+						<a class="icon-search" href="search.html" id="searchid"></a>
+						<a class="icon-cart" href="#"> </a>
+						<a href="shopping_cart.html" class="cart-num">{{num.num}}</a>
+					</div>
+					<div class="wrap wrap-display wrap0">
+							<div class="m-hot-search-words">
+									<ul class="search_list">
+										<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+										<div class="delete history">
+										</div>
+										<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+											<li class="search_list_item hot">鞋包3件85折</li>
+											<li class="search_list_item hot">午睡神器特惠</li>
+											<li class="search_list_item hot">床垫</li>
+											<li class="search_list_item hot">服饰买2免1</li>
+											<li class="search_list_item hot">反季特惠</li>
+									</ul>
+							</div>
+				</div>
+				</div>
+				<div id="nav-1">
+				<div id="main-nav">
+						<ul class="nav">
+							<li class="nav-item">
+								<a href="index.html" class="topLevel" >首页</a>
+							</li>
+							<li class="nav-item" v-for="nav in firstnav" >
+								<a class="topLevel" href="#">{{nav.name}}</a>
+								<ul class="card-list">
+									<div class="card">
+										<li class="item" v-for="nav_2 in nav.card_list">
+											<a class="nav-subCate" href="javascript:;">
+												<img class="icon" v-bind:src="nav_2.img" />
+												<p class="text">{{nav_2.card_name}}</p>
+											</a>
+										</li>
+										
+									</div>
+								</ul>
+							</li>	
+							
+						</ul>
+					</div>
+					
+				</div>
+		</div>
+		<div class="content">
+			<!--导航条-->
+		    <div class="xiaodaohang">
+			     <a href="#">首页</a>
+			     <span style="color: #A7936E;">&nbsp;&nbsp;>&nbsp;&nbsp;</span>
+			     <a href="#" style="color: #A7936E;">居家</a>
+		    </div>
+		    
+		    
+		   <!--轮播图整体div-->
+            <div class="banner">
+    <!--无序列表承载轮播的图片-->
+    <ul class="img">
+        <li><a href="#">
+				<img src="img/img1.jpg" alt="第1张图片">
+			</a>
+		</li>
+        <li><a href="#"><img src="img/img2.jpg" alt="第2张图片"></a></li>
+        <li><a href="#"><img src="img/img3.jpg" alt="第3张图片"></a></li>
+ 
+    </ul>
+    <!--用来放置圆点具体实施在js代码中呈现-->
+    <ul class="num"></ul>
+    <!--左右点击按钮-->
+    <div class="btn">
+        <span class="prev">
+			<img src="img/轮播图切换左.png" style="width: 50px;height: 50px" >
+		</span>
+        <span class="next"><img src="img/轮播图切换右.png" style="width: 50px;height: 50px;"></span>
+    </div>
+</div>
+
+          <!-- 分类表-->
+		<div class="goodsarea">
+			<div class="category">
+				<span class="name" ><font color="#999999">分类：</font> </span>
+				<a href="#" class="fisrta"><font color="#C5A08D">全部</font></a>
+				<a href="#">夏凉</a>
+				<a href="#">床品件套</a>
+				<a href="#">被枕</a>
+				<a href="#">家具</a>
+				<a href="#">灯具</a>
+				<a href="#">收纳</a>
+				<a href="#">布艺软装</a>
+				<a href="#">家饰</a>
+				<a href="#">旅行用品</a>
+				<a href="#">宠物</a>
+			</div>
+			<div class="category">
+				<span class="name" ><font color="#999999">配送地区：</font></span>
+				<a href="#" class="fisrta"><font color="#C5A08D"> 全部</font></a>
+				<a href="#">香港</a>
+				<a href="#">澳门</a>
+				<a href="#">台湾</a>
+				<a href="#">日韩</a>
+				<a href="#">亚洲</a>
+				<a href="#">欧洲</a>
+				<a href="#">美洲</a>
+			</div>
+			<div class="category">
+				<span class="name" ><font color="#999999">排序：</font></span>
+				<a href="#" class="fisrta"><font color="#C5A08D">默认</font></a>
+				<a href="#">价格</a>
+				<a href="#">上架时间</a>
+			</div>
+			
+			  <!-- 商品区-->
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu1.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">夏凉</font></p>
+				</div>
+				<p><font color="#99A6BF"> 夏凉床品，舒适一夏</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<span class="word_on_picture"><a href=""> 3色可选</a></span>
+							<div class="pic">
+							<a v-bind:href="'detail.html?utel='+utel+'&p_id=1'"><img src="img/pic1.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a v-bind:href="'detail.html?utel='+utel+'&p_id=1'">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 2色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic2.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">小面包双面双温感坐垫</a></span>
+							<span class="name3">￥29</span>
+							<hr />
+							<p class="name4">清凉度夏，双面双温随心选</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 4色可选</a></span>
+							<div class="pic">
+							<a v-bind:href="'detail.html?utel='+utel+'&p_id=2'"><img src="img/pic3.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a v-bind:href="'detail.html?utel='+utel+'&p_id=2'"> 新色 奢华植鞣头层水牛皮席三件套</a></span>
+							<span class="name3">￥2499</span>
+							<hr />
+							<p class="name4">三峡水牛头层皮，高端夏凉必备</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic4.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">平滑密编清凉仿藤席</a></span>
+							<span class="name3">￥299</span>
+							<hr />
+							<p class="name4">凉而不冰，老幼体寒者夏季必备</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic5.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 平滑细篾头层青碳化竹凉席</a></span>
+							<span class="name3">￥259</span>
+							<hr />
+							<p class="name4">细致整密，凉滑不夹肉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic6.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 天然宽篾头层青碳化竹凉席</a></span>
+							<span class="name3">￥279</span>
+							<hr />
+							<p class="name4">宽细夹排，升级爽滑凉感</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic7.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 头层青碳化宿舍单人床竹席</a></span>
+							<span class="name3">￥99</span>
+							<hr />
+							<p class="name4">细整竹丝，宿舍床必备</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic8.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 新色 纯棉水洗色织格薄被</a></span>
+							<span class="name3">￥169</span>
+							<hr />
+							<p class="name4">100%棉填充，透气爽利，双面可用</p>
+						</div>
+					</li>
+			</div> 
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu2.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">床品件套</font></p>
+				</div>
+				<p><font color="#99A6BF"> MUJI等品牌制造商出品</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic9.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 酒店风奢密四件套</a></span>
+							<span class="name3">￥659</span>
+							<hr />
+							<p class="name4">埃及长绒棉，享5星奢眠</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 4色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic10.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 晨曦渐变天丝四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">气质简约渐变，清凉亲肤保湿</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic11.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> Paisley欧式天丝四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">经典佩兹利纹，进口凉感天丝</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic12.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">渐变欧式天丝四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 4色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic13.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 花漾初绽四件套</a></span>
+							<span class="name3">￥229</span>
+							<hr />
+							<p class="name4">独家花漾设计，纯棉透气亲肤</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic14.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 唤自然·迷雾雨林四件套</a></span>
+							<span class="name3">￥399</span>
+							<hr />
+							<p class="name4">甄选新疆棉，贡缎细密</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic15.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 唤自然·仲夏椰香四件套</a></span>
+							<span class="name3">￥299</span>
+							<hr />
+							<p class="name4">100%全棉，椰林自然设计</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 4色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic16.jpg" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 趣味萌宠定制款四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">狗年定制款，高支高密棉</p>
+						</div>
+					</li>	
+			</div> 
+			
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu3.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">被枕</font></p>
+				</div>
+				<p><font color="#99A6BF">守护你的睡眠时光</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic17.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 轻暖升温澳洲羊毛被 春秋被</a></span>
+							<span class="name3">￥299</span>
+							<hr />
+							<p class="name4">南方御秋寒，北方暖气房，一条搞定</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic18.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 宇宙沙盘控温被 薄被</a></span>
+							<span class="name3">￥369</span>
+							<hr />
+							<p class="name4">航天材料填充，双向调温</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic19.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 全棉澳毛床褥床垫 床笠款</a></span>
+							<span class="name3">￥329</span>
+							<hr />
+							<p class="name4">精选优质澳毛，柔软保暖</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic20.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 加厚保暖白鸭毛丝羽绒床褥</a></span>
+							<span class="name3">￥379</span>
+							<hr />
+							<p class="name4">恒温保暖，吸湿蓬软</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic21.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 安睡慢回弹记忆绵床垫</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">5cm记忆绵的亲密包裹</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic22.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 抗菌防螨防漏床垫保护垫</a></span>
+							<span class="name3">￥79</span>
+							<hr />
+							<p class="name4">保护床垫，防水防渍</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic23.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> AB面独立弹簧床垫 进口乳胶</a></span>
+							<span class="name3">￥2599</span>
+							<hr />
+							<p class="name4">仅售供应商建议价的1/3</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 5色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic24.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 冬夏两用 护脊椰棕弹簧床垫</a></span>
+							<span class="name3">￥2099</span>
+							<hr />
+							<p class="name4">硬度偏好者优选</p>
+						</div>
+					</li>
+			</div> 
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu4.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">家具</font></p>
+				</div>
+				<p><font color="#99A6BF">大师级工艺</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic25.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 艾米 真皮沙发</a></span>
+							<span class="name3">￥6999</span>
+							<hr />
+							<p class="name4">定位高端，国际一线品牌代工厂</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic26.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 羽画 真皮沙发</a></span>
+							<span class="name3">￥6799</span>
+							<hr />
+							<p class="name4">全真皮沙发 坐垫独立小弹簧</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic27.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> YEATION百合沙发单人位</a></span>
+							<span class="name3">￥2199</span>
+							<hr />
+							<p class="name4">柔软舒适，深陷其中</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic28.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> YEATION百合沙发三人位</a></span>
+							<span class="name3">￥2999</span>
+							<hr />
+							<p class="name4">雍容大气，全套可拆洗</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic29.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 韵白系列桌椅组合（1桌+4椅）</a></span>
+							<span class="name3">￥5999</span>
+							<hr />
+							<p class="name4">高档典雅，经典组合</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic30.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 韵白系列餐桌</a></span>
+							<span class="name3">￥2199</span>
+							<hr />
+							<p class="name4">简约欧式餐桌</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic31.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 韵白系列餐椅（两把）</a></span>
+							<span class="name3">￥1999</span>
+							<hr />
+							<p class="name4">厚重而又舒适的餐椅</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic32.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 韵白系列沙发组合</a></span>
+							<span class="name3">￥6799</span>
+							<hr />
+							<p class="name4">组合搭配，温馨舒适</p>
+						</div>
+					</li>
+			</div> 
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu5.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">灯具</font></p>
+				</div>
+				<p><font color="#99A6BF">一盏灯，温暖一个家</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic33.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 铜铁时代台灯</a></span>
+							<span class="name3">￥179</span>
+							<hr />
+							<p class="name4">铸铁打造，金属元素</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic34.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 月梢台灯</a></span>
+							<span class="name3">￥159</span>
+							<hr />
+							<p class="name4">月上树梢，诗意生活</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic35.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 自然光多功能触控阅读灯</a></span>
+							<span class="name3">￥189</span>
+							<hr />
+							<p class="name4">12档拟自然光源，轻薄冷峻线条</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic36.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 网易智造双光源记忆护目灯</a></span>
+							<span class="name3">￥249</span>
+							<hr />
+							<p class="name4">时尚照明，双光源环境面光</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic37.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 网易智造人体感应磁吸小夜灯</a></span>
+							<span class="name3">￥59</span>
+							<hr />
+							<p class="name4">人体红外自动感应,磁吸挂贴</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic38.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 网易智造LED吸顶灯组合两厅两室</a></span>
+							<span class="name3">￥319</span>
+							<hr />
+							<p class="name4">松下制造商 带遥控三色无极调光</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic39.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 网易智造北欧极简落地灯</a></span>
+							<span class="name3">￥169</span>
+							<hr />
+							<p class="name4">有格调的灯 精致极简</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic40.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 北欧极简直杆台灯</a></span>
+							<span class="name3">￥249</span>
+							<hr />
+							<p class="name4">清爽百搭 永不过时的经典</p>
+						</div>
+					</li>
+			</div> 	
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu6.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">收纳</font></p>
+				</div>
+				<p><font color="#99A6BF">选择古驰竹柄原料供应商</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic41.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 田园风桌面抽屉柜 两抽</a></span>
+							<span class="name3">￥99</span>
+							<hr />
+							<p class="name4">双层收纳，别致安心</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic42.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 日式木质收纳盒 2层</a></span>
+							<span class="name3">￥139</span>
+							<hr />
+							<p class="name4">精选木材，坚实耐用</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic43.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 日式木质收纳盒 3层</a></span>
+							<span class="name3">￥169</span>
+							<hr />
+							<p class="name4">三层设计，多格收纳</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic44.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 多功能纸巾盒</a></span>
+							<span class="name3">￥25</span>
+							<hr />
+							<p class="name4">精工细作，便捷收纳</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic45.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 旋转可折叠收纳篮</a></span>
+							<span class="name3">￥86</span>
+							<hr />
+							<p class="name4">瞬间伸缩，超强收纳</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic46.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> X竹筐收纳架</a></span>
+							<span class="name3">￥128</span>
+							<hr />
+							<p class="name4">Gucci楠竹，牢固支撑</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic47.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 居家棉麻涤收纳挂袋</a></span>
+							<span class="name3">￥65</span>
+							<hr />
+							<p class="name4">实用棉麻，悬挂牢固</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic48.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#"> 2件装 棉麻涤防尘衣罩组合</a></span>
+							<span class="name3">￥79</span>
+							<hr />
+							<p class="name4">可视设计，全面防护</p>
+						</div>
+					</li>
+			</div> 	
+			
+			<div class="biaoti">
+							<div class="biaotitu">
+								<img class="biaotitu" src="img/biaotitu7.png"/ width="44px" height="44px" />
+							</div>
+							<div class="timu">
+								<p><font color="#333333">布艺软装</font></p>
+							</div>
+							<p><font color="#99A6BF">各种风格软装装点你的家</font></p>
+						</div>
+						<div class="picture">
+							<ul>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic49.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 超柔弹力懒人沙发</a></span>
+										<span class="name3">￥349</span>
+										<hr />
+										<p class="name4">软糯高弹，双层防漏，舒适自由组合</p>
+									</div>
+								</li>
+						        <li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic50.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 简约全棉华夫格抱枕套</a></span>
+										<span class="name3">￥29</span>
+										<hr />
+										<p class="name4">立体华夫格，色彩肌理感点缀</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic51.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 唤自然·青林麋鹿抱枕套</a></span>
+										<span class="name3">￥49</span>
+										<hr />
+										<p class="name4">手绘自然风，品质绒面，装点高级家居</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic52.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 丝绒流光抱枕套</a></span>
+										<span class="name3">￥59</span>
+										<hr />
+										<p class="name4">压皱丝绒腔调高级，吊穗添趣味</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic53.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 北欧简约山形纹绣花抱枕</a></span>
+										<span class="name3">￥79</span>
+										<hr />
+										<p class="name4">精细刺绣，舒适立体</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic54.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 萌爪防滑静音椅脚套</a></span>
+										<span class="name3">￥9.9</span>
+										<hr />
+										<p class="name4">立体萌爪，静音防滑防刮碰</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic55.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 淘气萌宠多用腰靠</a></span>
+										<span class="name3">￥69</span>
+										<hr />
+										<p class="name4">收纳可爱腰枕，展开实用小毯</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic56.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 清新趣粉系列居家地毯灰黄条纹</a></span>
+										<span class="name3">￥599</span>
+										<hr />
+										<p class="name4">条纹色块拼接 软糯温馨</p>
+									</div>
+								</li>
+						</div> 	
+						
+						
+						<div class="biaoti">
+							<div class="biaotitu">
+								<img class="biaotitu" src="img/biaotitu8.png"/ width="44px" height="44px" />
+							</div>
+							<div class="timu">
+								<p><font color="#333333">家饰</font></p>
+							</div>
+							<p><font color="#99A6BF">装饰你的家</font></p>
+						</div>
+						<div class="picture">
+							<ul>
+								<li class="goods">
+										<span class="word_on_picture"><a href="detail.html"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic57.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">莫奈系列 装饰画</a></span>
+										<span class="name3">￥188</span>
+										<hr />
+										<p class="name4">高精微喷，重现莫奈的光影盛宴</p>
+									</div>
+								</li>
+						        <li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic58.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">北欧风静音拍拍闹钟</a></span>
+										<span class="name3">￥69</span>
+										<hr />
+										<p class="name4">轻拍贪睡五分钟，超静音安享优质睡眠</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic59.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">致敬大师·经典艺术装饰画</a></span>
+										<span class="name3">￥119</span>
+										<hr />
+										<p class="name4">微喷工艺，与艺术同居</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic60.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">美式实木相框</a></span>
+										<span class="name3">￥19.9</span>
+										<hr />
+										<p class="name4">美式经典，新西兰进口松木</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic61.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">花见小路·橄榄枝</a></span>
+										<span class="name3">￥39</span>
+										<hr />
+										<p class="name4">INS大热，清新绿意，文艺脱俗</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic62.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">多功能透明亚克力相框</a></span>
+										<span class="name3">￥21</span>
+										<hr />
+										<p class="name4">优质亚克力，剔透恒新</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic63.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">绿野仙踪永生花</a></span>
+										<span class="name3">￥469</span>
+										<hr />
+										<p class="name4">点燃少女心，清新之美无法抗拒</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic64.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#">海洋之心永生花</a></span>
+										<span class="name3">￥299</span>
+										<hr />
+										<p class="name4">花语：相守是一种承诺</p>
+									</div>
+								</li>
+						</div> 	
+						
+						<div class="biaoti">
+							<div class="biaotitu">
+								<img class="biaotitu" src="img/biaotitu9.png"/ width="44px" height="44px" />
+							</div>
+							<div class="timu">
+								<p><font color="#333333">旅行用品</font></p>
+							</div>
+							<p><font color="#99A6BF">出行小物，贴心相伴</font></p>
+						</div>
+						<div class="picture">
+							<ul>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic57.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 莫奈系列 装饰画</a></span>
+										<span class="name3">￥188</span>
+										<hr />
+										<p class="name4">高精微喷，重现莫奈的光影盛宴</p>
+									</div>
+								</li>
+						        <li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic58.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 北欧风静音拍拍闹钟</a></span>
+										<span class="name3">￥69</span>
+										<hr />
+										<p class="name4">轻拍贪睡五分钟，超静音安享优质睡眠</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic59.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 致敬大师·经典艺术装饰画</a></span>
+										<span class="name3">￥119</span>
+										<hr />
+										<p class="name4">微喷工艺，与艺术同居</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic60.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 美式实木相框</a></span>
+										<span class="name3">￥19.9</span>
+										<hr />
+										<p class="name4">美式经典，新西兰进口松木</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic61.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 花见小路·橄榄枝</a></span>
+										<span class="name3">￥39</span>
+										<hr />
+										<p class="name4">INS大热，清新绿意，文艺脱俗</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic62.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 多功能透明亚克力相框</a></span>
+										<span class="name3">￥21</span>
+										<hr />
+										<p class="name4">优质亚克力，剔透恒新</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic63.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 绿野仙踪永生花</a></span>
+										<span class="name3">￥469</span>
+										<hr />
+										<p class="name4">点燃少女心，清新之美无法抗拒</p>
+									</div>
+								</li>
+								<li class="goods">
+										<span class="word_on_picture"><a href="#"> 2色可选</a></span>
+										<div class="pic">
+										<a href="#"><img src="img/pic64.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 海洋之心永生花</a></span>
+										<span class="name3">￥299</span>
+										<hr />
+										<p class="name4">花语：相守是一种承诺</p>
+									</div>
+								</li>
+						</div> 	
+						
+						
+						<div class="biaoti">
+							<div class="biaotitu">
+								<img class="biaotitu" src="img/biaotitu10.png"/ width="44px" height="44px" />
+							</div>
+							<div class="timu">
+								<p><font color="#333333">宠物</font></p>
+							</div>
+							<p><font color="#99A6BF">抑菌除味，打造宠物舒适空间</font></p>
+						</div>
+						<div class="picture">
+							<ul>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic73.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 清煮鸡胸肉（犬&猫用）</a></span>
+										<span class="name3">￥18.9</span>
+										<hr />
+										<p class="name4">细嫩胸脯肉，低脂高蛋白，易吸收</p>
+									</div>
+								</li>
+						        <li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic74.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 鲜香风干火腿肠（犬用）</a></span>
+										<span class="name3">￥22</span>
+										<hr />
+										<p class="name4">软硬适中，优质肉类，香味浓郁</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic75.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 全期犬粮 2.0KG</a></span>
+										<span class="name3">￥88</span>
+										<hr />
+										<p class="name4">优质食材，薯类膨化多肉配方</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic76.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 磨牙鸡肉片(犬用)</a></span>
+										<span class="name3">￥26</span>
+										<hr />
+										<p class="name4">营养鸡肉，帮助磨牙</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic77.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 多功能封闭式环保除臭猫砂盆</a></span>
+										<span class="name3">￥189</span>
+										<hr />
+										<p class="name4">隔绝异味，拒绝带砂，洁净卫生</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic78.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 红点设计大奖 翻折式出行水壶</a></span>
+										<span class="name3">￥28.8</span>
+										<hr />
+										<p class="name4">荣获红点设计大奖，多瓶口适用</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic79.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 六边形南瓜式宠物窝</a></span>
+										<span class="name3">￥89</span>
+										<hr />
+										<p class="name4">给萌宠柔软包裹的归家感</p>
+									</div>
+								</li>
+								<li class="goods">
+										<div class="pic">
+										<a href="#"><img src="img/pic80.png" width="245px" height="245px"/></a>
+										</div>
+									<div class="xiangqing">
+										<span class="name1">新品</span>
+										<span class="name2"><a href="#"> 方形封闭式宠物窝</a></span>
+										<span class="name3">￥99</span>
+										<hr />
+										<p class="name4">封闭式设计猫咪独享</p>
+									</div>
+								</li>
+						</div> 	
+						
+						
+						</div>
+						
+					</div>
+						
+					   
+			
+					</div>
+		<!--	<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu7.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">布艺软装</font></p>
+				</div>
+				<p><font color="#99A6BF">各种风格软装装点你的家</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic49.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic50.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic51.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic52.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic53.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic54.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic55.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic56.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			</div> 	
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu8.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">家饰</font></p>
+				</div>
+				<p><font color="#99A6BF">装饰你的家</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<span class="word_on_picture"><a href="detail.html"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic57.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic58.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic59.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic60.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic61.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic62.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic63.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 3色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic64.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			</div> 	
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu9.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">旅行用品</font></p>
+				</div>
+				<p><font color="#99A6BF">出行小物，贴心相伴</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic57.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic58.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic59.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic60.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic61.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic62.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic63.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<span class="word_on_picture"><a href="#"> 2色可选</a></span>
+							<div class="pic">
+							<a href="#"><img src="img/pic64.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			</div> 	
+			
+			
+			<div class="biaoti">
+				<div class="biaotitu">
+					<img class="biaotitu" src="img/biaotitu10.png"/ width="44px" height="44px" />
+				</div>
+				<div class="timu">
+					<p><font color="#333333">宠物</font></p>
+				</div>
+				<p><font color="#99A6BF">抑菌除味，打造宠物舒适空间</font></p>
+			</div>
+			<div class="picture">
+				<ul>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic73.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			        <li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic74.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic75.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic76.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic77.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic78.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic79.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+					<li class="goods">
+							<div class="pic">
+							<a href="#"><img src="img/pic80.png" width="245px" height="245px"/></a>
+							</div>
+						<div class="xiangqing">
+							<span class="name1">新品</span>
+							<span class="name2"><a href="#">自然棉麻四件套</a></span>
+							<span class="name3">￥599</span>
+							<hr />
+							<p class="name4">透气吸汗麻+亲肤柔软棉</p>
+						</div>
+					</li>
+			</div> 	
+			
+			
+			</div>
+			
+		</div>
+			
+		   
+
+		</div>-->
+		<!--底部-->
+		<div id="footer1">
+		<div class="foot-ensure-item ensure-item11">
+			<h4 class="text-title">客户服务</h4>
+			<div class="ensure-item1">
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/service.png"width="40px" height="40px" >
+						<p>在线客服</p>
+					</div>
+				</div>
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/消息.png"width="40px" height="40px" >
+						<p>用户反馈</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot-ensure-item">
+			<h4 class="text-title">何为严选</h4>
+				<div id="ensure-item2">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+				</div>
+			
+				<div id="guanzhu">
+					关注我们：
+				</div>
+				<div id="wqx">
+					<img src="images/wtx.png" height="32px" >
+				</div>
+		</div>
+		<div class="foot-ensure-item ensure-item33">
+			<h4 class="text-title">扫码下载严选APP</h4>
+				<div id="ensure-item3">
+					<img src="images/qr.png"  >
+				</div>
+		</div>
+	</div>
+	<div class="footer2">
+		<div class="footer2-ensure-item">
+			<div class="first-row">
+				<ul class="ensure">
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f1"></i>
+							<p class="text2">30天无忧退货</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f2"></i>
+							<p class="text2">满88元免邮费</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f3"></i>
+							<p class="text2">网易品质保证</p>
+						</div>
+					</li>
+				</ul>
+				<hr>
+				<div class="m-siteInfo">
+					<nav class="nav-1">
+						<a class="text2 text2-color" href="javascript:;">关于我们</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">售后服务</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">商务合作</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">企业采购</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">友情链接</a>
+					</nav>
+					<p class="copyright">
+						网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+					</p>
+					<a class="businessAdmin" href="javascript:;">
+						<img src="./images/admin.gif" width="36" height="39" alt="" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+	<script src="js/标题固定.js"></script>
+	<script src="js/动态菜单.js"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+	    //定义i变量为动态控制图片轮播做准备，i的值与每张图片进行一一的对应
+	    var i=0;
+	    //时间变量，为自动轮播以及对光标的影响做出相应的反应
+	    var timer=null;
+	    //根据图片的张数动态添加圆点个数
+	    for (var j = 0; j < $('.img li').length; j++) {
+	        $('.num').append('<li></li>');
+	    }
+	    //默认情况下的第一个圆点进行背景设计
+	    $('.num li').first().addClass('active');
+	    //根据光标的影响控制按钮的显示和隐藏
+	    $('.banner').hover(function(){
+	        $('.btn').show();
+	    },function(){
+	        $('.btn').hide();
+	    });
+	    //将第一张图片复制并添加到img部分下与前五张图片相接
+	    var firstimg=$('.img li').first().clone(); //复制第一张图片
+	    $('.img').append(firstimg).width($('.img li').length*($('.img img').width()));
+	    //定时器自动轮播
+	    timer=setInterval(function(){
+	        i++;
+	        if (i==$('.img li').length) {
+	            i=1;
+	            $('.img').css({left:0});//保证无缝轮播，设置left值
+	        }
+	        //进行下一张图片
+	        $('.img').stop().animate({left:-i*1090},500);
+	        //圆点跟着变化
+	        if (i==$('.img li').length-1) {
+	            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	        }else{
+	            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	        }
+	    },2000);
+	    //鼠标移入，暂停自动播放，移出，开始自动播放
+	    $('.banner').hover(function(){
+	        clearInterval(timer);
+	    },function(){
+	        timer=setInterval(function(){
+	            i++;
+	            if (i==$('.img li').length) {
+	                i=1;
+	                $('.img').css({left:0});
+	            };
+	            //进行下一张图片
+	            $('.img').stop().animate({left:-i*1090},500);
+	            //圆点跟着变化
+	            if (i==$('.img li').length-1) {
+	                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	            }else{
+	                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	            }
+	        },2000)
+	    });
+	    //上一个按钮
+	    $('.prev').click(function(){
+	        i--;
+	        if (i==-1) {
+	            i=$('.img li').length-2;
+	            $('.img').css({left:-($('.img li').length-1)*1090});
+	        }
+	        $('.img').stop().animate({left:-i*1090},500);
+	        $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	    });
+	    // 下一个按钮
+	    $('.next').click(function(){
+	        i++;
+	        if (i==$('.img li').length) {
+	            i=1; //这里不是i=0
+	            $('.img').css({left:0});
+	        };
+	        $('.img').stop().animate({left:-i*1090},500);
+	        if (i==$('.img li').length-1) { //设置小圆点指示
+	            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	        }else{
+	            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	        };
+	 
+	    });
+	    //鼠标划入圆点
+	    $('.num li').mouseover(function(){
+	        var _index=$(this).index();
+	        //维持i变量控制的对应关系不变
+	        i = _index;                 
+	        $('.img').stop().animate({left:-_index*1090},300);
+	        $('.num li').eq(_index).addClass('active').siblings().removeClass('active');
+	    });
+			
+	})
+</script>
+<script type="text/javascript">
+	var v=new Vue({
+	el: ".picture",
+	data:{
+		firstnav:[],
+		boxs:[],
+		utelephone:utel
+	}
+	});
+</script>
+</html>

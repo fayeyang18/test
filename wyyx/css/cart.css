@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "微软雅黑";
+	font-size: 15px;
+}
+ul,ol{
+	list-style: none;
+	
+}
+a{
+	text-decoration: none;
+}
+input[type=checkbox]{
+	width: 18px;
+	height: 18px;
+	background-color: white;
+}
+.cart-product{
+	float: left;
+	height: 100px;
+	padding: 20px 0 ;
+	overflow: hidden;
+	width: 1090px;
+	border-bottom: 1px solid #ddd;
+}
+.product-select{
+	float: left;
+	margin-top: 40px;
+	text-align: center;
+	/*height: 200px;*/
+	width: 58px;
+}
+.product{
+	float: left;
+	text-alien:center;
+	width: 460px;
+}
+.product-size {
+	position: relative;
+	top: 0;
+	left: 40px;
+	width: 250px;
+	font-size: 13px;
+	color: #999;
+	cursor: pointer;
+}
+.product-img{
+	float: left;
+	width: 100px;
+	height:100px;
+}
+.product-name{
+	float: left;
+	line-height: 50px;
+	text-align: left;
+	font-size: 14px;
+	cursor: pointer;
+	padding-left: 40px;
+}
+.product-price{
+	color: #333;
+	float: left;
+	width: 170px;
+	line-height: 100px;
+}
+.product-num{
+	float: left;
+	width: 180px;
+	margin-top: 40px;
+}
+.selnum{
+	width: 109px;
+	border: 1px solid #ddd;
+}
+.less{
+	width: 24px;
+	height: 20px;
+	border-right: 1px solid #ddd;
+	text-align: center;
+	display: inline-block;
+}
+.more{
+		width: 24px;
+		height: 20px;
+		border-left: 1px solid #ddd;
+		text-align: center;
+		display: inline-block;
+}
+.input-product{
+	width: 50px;
+	border: none;
+	text-align: center;
+}
+.pays_left {
+	line-height: 60px;
+}
+.product-allprice{
+	float: left;
+	width: 180px;
+	line-height: 100px;
+	color: #d4282d;
+}
+.product-fun{
+	float: left;
+	margin-left: -80px;
+	line-height: 80px;
+}
+.product-fun a{
+	font-size: 14px;
+	color: #666;
+	text-align: center;
+	display: block;
+	width: 100px;
+	height: 30px;
+}
+.product-fun a:last-child{
+	margin-left: -20px;
+}

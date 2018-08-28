@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/program1.css" />
+		<link rel="stylesheet" type="text/css" href="css/footer.css" />
+		<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var utel = window_request_paramter("utel");
+			var p_id = window_request_paramter("p_id");
+		</script>
+	</head>
+	<body>
+		<div id="header">
+				<div id="top">
+					<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+						<p>好的生活，没那么贵</p>
+					</div>
+					<div id="nav">
+						<div class="title">
+							<a href="#" class="title-nav">我的订单</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">会员</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">甄选家</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">企业采购</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">客户服务</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">APP</a>
+						</div>
+					</div>
+				</div>
+				<div id="low">
+					<div>
+						<a href="index.html" class="tab-logo"></a>
+					</div>
+					<div class="search">
+						<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+						<a class="icon-search" href="#" id="searchid"></a>
+						<a class="icon-cart" href="#"> </a>
+						<a href="shopping_cart.html" class="cart-num">{{num.num}}</a>
+					</div>
+					<div class="wrap wrap-display wrap0">
+							<div class="m-hot-search-words">
+									<ul class="search_list">
+										<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+										<div class="delete history">
+										</div>
+										<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+											<li class="search_list_item hot">鞋包3件85折</li>
+											<li class="search_list_item hot">午睡神器特惠</li>
+											<li class="search_list_item hot">床垫</li>
+											<li class="search_list_item hot">服饰买2免1</li>
+											<li class="search_list_item hot">反季特惠</li>
+									</ul>
+							</div>
+					</div>
+				</div>
+				<div id="nav-1">
+				<div id="main-nav">
+						<ul class="nav">
+							<li class="nav-item">
+								<a href="#" class="topLevel" >首页</a>
+							</li>
+							<li class="nav-item" v-for="nav in firstnav" >
+								<a class="topLevel" href="#">{{nav.name}}</a>
+								<ul class="card-list">
+									<div class="card">
+										<li class="item" v-for="nav_2 in nav.card_list">
+											<a class="nav-subCate" href="javascript:;">
+												<img class="icon" v-bind:src="nav_2.img" />
+												<p class="text">{{nav_2.card_name}}</p>
+											</a>
+										</li>
+										
+									</div>
+								</ul>
+							</li>	
+							
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		
+		
+		
+		<hr color="#F8F8F8" />
+			
+			
+		<div class="content" >
+			<div class="addr">
+				<div class="head">
+			        <span>收货信息</span>
+		        </div>
+		        <div class="data">
+		        	<div class="left">
+		        		<div  class="addr1">
+		                <label>所在地区：</label>
+		                <select id="pro_select" style="width: 175px;">
+		                </select>
+		                <select id="city_select" style="width: 175px;">
+		                </select>
+		                <select id="area_select" style="width: 175px;">
+		                </select>
+		                	<span class="xiangxi">详细地址： <textarea  rows="3" style="vertical-align: top; width: 530px;"></textarea>
+		                	</span>
+		                	<span>收货人:</span><span><input type="text"/> </span>
+		                	<span>手机号码:</span><span><input type="text"/> </span>
+		                </div>
+		                
+		        	</div>
+		        	<div class="right">
+		        		<div class="moren">
+		        			<input type="checkbox" style="width: 18px;"/>
+		        			<span>设为默认</span>
+		        		</div>
+		        			<div class="but1">
+		        				保存地址
+		        			</div>
+		        			<div class="but2">
+		        				取消
+		        			</div>	
+		        	</div>
+		        </div>
+		        </div>
+		        
+		        
+		        <div class="information">
+		        	<div class="pro_info">
+		        		<div class="head">
+			        <table>
+			        	<tr class="r1">
+			        		<th class="th1">商品信息</th>
+			        		<th class="th2">单价</th>
+			        		<th class="th2">数量</th>
+			        		<th class="th2">小计</th>
+			        		<th class="th2">实付</th>
+			        	</tr>
+			        	<tr>
+			        		<td class="th1">
+			        			<div class="goodspicture">
+			        				<img src="img/col4.png" width="100px" height="100px"/>
+			        				<div class="goodsname">女式纯棉百搭圆领T恤</div>
+			        				<p>肉桂粉 M</p>
+			        			</div>
+			        		</td >
+			        		<td class="th2">
+			        			￥49.00
+			        		</td>
+			        		<td class="th2">
+			        			1
+			        		</td>
+			        		<td class="th2">
+			        			￥49.00
+			        		</td>
+			        		<td class="th2">
+			        			￥34.00
+			        		</td>
+			        	</tr>
+			        </table>
+		        </div>
+		        	</div>
+		        	<div class="reciept">
+		        		<div class="reciept_info">发票信息</div>
+		        		<div class="reciept_select"><input type="checkbox"/>我要开发票</div>
+		        	</div>
+		        	<div class="pay_info">
+		        		<div class="pay_right">
+		        			<div class="pay_price">
+		        		<p class="pro_all">
+		        			<span class="pro_all_left">商品合计：</span>
+		        			<span class="pro_all_right">¥44.10</span>
+		        		</p>
+		        		<p class="pro_all">
+		        			<span class="pro_all_left">运费：</span>
+		        			<span class="pro_all_right">¥10.00</span>
+		        		</p>
+		        	</div>
+		        	<div class="price_all">
+		        		<span class="p_left">应付总额:</span>
+		        		<span class="p_right">¥54.10</span>
+		        		<div><a href="#">去付款</a></div>
+		        		<p>王少霞 &nbsp;&nbsp;13070861485</p>
+		        		<p>山东省青岛市市南区宁夏路308号青岛大学</p>
+		        	</div>
+		        		</div>
+		        	
+		        </div>
+		        <div>
+		        </div>
+		        
+		        	
+		        </div>
+			    <p class="xieyi"><input type="checkbox"/><a href="#">《网易严选服务协议》</a></p>
+		</div>
+					<!--底部-->
+		<div id="footer1">
+		<div class="foot-ensure-item ensure-item11">
+			<h4 class="text-title">客户服务</h4>
+			<div class="ensure-item1">
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/service.png"width="40px" height="40px" >
+						<p>在线客服</p>
+					</div>
+				</div>
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/消息.png"width="40px" height="40px" >
+						<p>用户反馈</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot-ensure-item">
+			<h4 class="text-title">何为严选</h4>
+				<div id="ensure-item2">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+				</div>
+			
+				<div id="guanzhu">
+					关注我们：
+				</div>
+				<div id="wqx">
+					<img src="images/wtx.png" height="32px" >
+				</div>
+		</div>
+		<div class="foot-ensure-item ensure-item33">
+			<h4 class="text-title">扫码下载严选APP</h4>
+				<div id="ensure-item3">
+					<img src="images/qr.png"  >
+				</div>
+		</div>
+	</div>
+	<div class="footer2">
+		<div class="footer2-ensure-item">
+			<div class="first-row">
+				<ul class="ensure">
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f1"></i>
+							<p class="text2">30天无忧退货</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f2"></i>
+							<p class="text2">满88元免邮费</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f3"></i>
+							<p class="text2">网易品质保证</p>
+						</div>
+					</li>
+				</ul>
+				<hr>
+				<div class="m-siteInfo">
+					<nav class="nav-1">
+						<a class="text2 text2-color" href="javascript:;">关于我们</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">售后服务</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">商务合作</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">企业采购</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">友情链接</a>
+					</nav>
+					<p class="copyright">
+						网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+					</p>
+					<a class="businessAdmin" href="javascript:;">
+						<img src="./images/admin.gif" width="36" height="39" alt="" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/标题固定.js"></script>
+	<script src="js/动态菜单.js"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    	var province=[
+			{
+				name:'山东',
+				city:[{name:'青岛',area:[{name:"一区",name2:"num1"},{name:"二区",name2:"num2"}]},
+				{name:"日照",area:[{name:"一区",name2:"num1"},{name:"二区",name2:"num2"}]}
+				]
+				
+			},
+			{
+				name:"河北",
+				city:[{name:"河西",
+				area:[{name:"一区",name2:"num1"},{name:"二区",name2:"num2"}]},
+				{name:"河东",
+				area:[{name:"三区",name2:"num3"},{name:"四区",name2:"num4"}]}
+				]
+			}
+			];
+			$(window).ready(function() {
+
+	for(var i = 0; i < province.length; i++) {
+		$("#pro_select").append("<option value=" + province[i].name + ">" + province[i].name + "</option>")
+	}
+
+	var citys = province[0].city;
+	for(var j = 0; j < citys.length; j++) {
+		$("#city_select").append("<option value=" + citys[j].name + ">" + citys[j].name + "</option>")
+	}
+
+	var areas = citys[0].area;
+	for(var k = 0; k < areas.length; k++) {
+		$("#area_select").append("<option value=" + areas[k].name+ ">" + areas[k].name + "</option>")
+	}
+
+	$("#pro_select").change(function() {
+
+		$("#city_select")[0].length = 0;
+		for(var i = 0; i < province.length; i++) {
+			if(province[i].name == $(this).val()) {
+				var citys = province[i].city;
+				for(var j = 0; j < citys.length; j++) {
+					$("#city_select").append("<option value=" + citys[j].name + ">" + citys[j].name + "</option>")
+				}
+				break;
+			}
+		}
+
+		var areas;
+		$("#area_select")[0].length = 0;
+		for(var j = 0; j < citys.length; j++) {
+			if(citys[j].name == $("#city_select").val())
+				areas = citys[j].area;
+			break;
+		}
+		for(var k = 0; k < areas.length; k++) {
+			$("#area_select").append("<option value=" + areas[k].name + ">" + areas[k].name + "</option>")
+		}
+	})
+
+	$("#city_select").change(function() {
+
+		var flag = false;
+		$("#area_select")[0].length = 0;
+		for(var i = 0; i < province.length; i++) {
+			if(province[i].name == $("#pro_select").val()) {
+				var citys = province[i].city;
+				for(var j = 0; j < citys.length; j++) {
+					if(citys[j].name == $(this).val()) {
+						var areas = citys[j].area;
+						for(var k = 0; k < areas.length; k++) {
+							$("#area_select").append("<option value=" + areas[k].name + ">" + areas[k].name + "</option>")
+						}
+						flag = true;
+						break;
+					}
+				}
+			}
+			if(flag)
+				break;
+		}
+	})
+})
+window.onload =
+			function () {
+				var oDiv = document.getElementById("nav-1"),
+					H = 0,
+					Y = oDiv
+				while (Y) {
+					H += Y.offsetTop;
+					Y = Y.offsetParent
+				}
+				window.onscroll = function () {
+					var s = document.body.scrollTop || document.documentElement.scrollTop
+					if (s > H) {
+						oDiv.style = "position: fixed; top: 0px;z-index:2"
+	
+					} else {
+						oDiv.style = "position:absolute;"
+					}
+				}
+			}
+		var nav = document.getElementsByClassName("nav-item");
+		for(var i=0;i<nav.length;i++)
+		{
+			a=nav[i].children;
+			$(a[0]).mouseenter(
+			function(){
+				a=this.parentNode.children;
+				$(a[1]).show(300);
+				
+			}
+			)
+			$(nav[i]).mouseleave(
+			function(){
+				a=this.children;
+				$(a[1]).hide(300);
+			}
+			)
+		}
+	    		  
+	   </script>
+</html>

@@ -1,0 +1,24 @@
+#his-dele{
+	width: 15px;
+	height: 15px;
+	padding-left: 150px;
+}
+.wrap-display{
+	display: none;
+}
+.wrap{
+	width: 252px;
+	height: 250px;
+	color: #333;
+	background-color: white;
+	position: absolute;
+	top: 135px;
+	left: 62%;
+	border: 1px solid #D8CEBC;
+	z-index: 9999;
+}
+.search_list_item{
+	padding: 2px 10px;
+	font-size: 12px;
+	font-weight: 500;
+}

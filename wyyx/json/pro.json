@@ -1,0 +1,29 @@
+[{
+		"id": 1,
+		"img":"img/1.png",
+		"name": "测试商品1",
+		"num": 1,
+		"price": 10.0
+	},
+	{
+		"id": 2,
+		"img":"img/2.png",
+		"name": "测试商品2",
+		"num": 2,
+		"price": 20.0
+	},
+	{
+		"id": 3,
+		"img":"img/3.png",
+		"name": "测试商品3",
+		"num": 3,
+		"price": 30.0
+	},
+	{
+		"id": 4,
+		"img":"img/1.png",
+		"name": "测试商品4",
+		"num": 4,
+		"price": 40.0
+	}
+]

@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" href="css/home.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="js/lunbo1.js" ></script>
+		<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var utel = window_request_paramter("utel");
+		</script>
+	</head>
+	<body>
+		<div id="header">
+				<div id="top">
+					<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+						<p>好的生活，没那么贵</p>
+					</div>
+					<div id="nav">
+						<div class="title">
+							<a href="order.html" class="title-nav" id="sddasd" style="border: none;"></a>
+						</div>
+						<div class="title">
+							<a href="order.html" class="title-nav">我的订单</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">会员</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">甄选家</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">企业采购</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">客户服务</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">APP</a>
+						</div>
+					</div>
+				</div>
+				<div id="low">
+					<div>
+						<a href="index.html" class="tab-logo"></a>
+					</div>
+					<div class="search">
+						<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+						<a class="icon-search" href="search.html" id="searchid"></a>
+						<a class="icon-cart" href="#"> </a>
+						<a href="shopping_cart.html" class="cart-num">{{num.num}}</a>
+					</div>
+					<div class="wrap wrap-display wrap0">
+							<div class="m-hot-search-words">
+									<ul class="search_list">
+										<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+										<div class="delete history">
+										</div>
+										<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+											<li class="search_list_item hot">鞋包3件85折</li>
+											<li class="search_list_item hot">午睡神器特惠</li>
+											<li class="search_list_item hot">床垫</li>
+											<li class="search_list_item hot">服饰买2免1</li>
+											<li class="search_list_item hot">反季特惠</li>
+									</ul>
+							</div>
+					</div>
+				</div>
+				<div id="nav-1">
+				<div id="main-nav">
+						<ul class="nav">
+							<li class="nav-item">
+								<a href="#" class="topLevel" >首页</a>
+							</li>
+							<li class="nav-item" v-for="nav in firstnav" >
+								<a class="topLevel" v-bind:href="'class.html?utel='+utel">{{nav.name}}</a>
+								<ul class="card-list">
+									<div class="card">
+										<li class="item" v-for="nav_2 in nav.card_list">
+											<a class="nav-subCate" href="javascript:;">
+												<img class="icon" v-bind:src="nav_2.img" />
+												<p class="text">{{nav_2.card_name}}</p>
+											</a>
+										</li>
+										
+									</div>
+								</ul>
+							</li>	
+							
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		
+		<article>
+			<div class="banner">
+				 <!--无序列表承载轮播的图片-->
+				<ul class="img">
+			        <li><a href="#">
+							<img src="img/lunbo1.jpg" alt="第1张图片">
+						</a>
+					</li>
+			        <li><a href="#"><img src="img/lunbo2.jpg" alt="第2张图片"></a></li>
+			        <li><a href="#"><img src="img/lunbo3.jpg" alt="第3张图片"></a></li>
+			        <li><a href="#"><img src="img/lunbo4.jpg" alt="第4张图片"></a></li>
+			        <li><a href="#"><img src="img/lunbo5.jpg" alt="第5张图片"></a></li>
+			        <li><a href="#"><img src="img/lunbo5.jpg" alt="第6张图片"></a></li>
+			        <li><a href="#"><img src="img/lunbo5.jpg" alt="第7张图片"></a></li>
+ 
+    			</ul>
+    			<!--用来放置圆点具体实施在js代码中呈现-->
+			    <ul class="num"></ul>
+			    <!--左右点击按钮-->
+			    <div class="btn">
+			        <span class="prev">
+						<img src="img/arrow-l.png" style="width: 50px;height: 50px" >
+					</span>
+			        <span class="next"><img src="img/arrow-r.png" style="width: 50px;height: 50px;"></span>
+    			</div>
+			</div>
+			<div class="mfrses">
+				<div class="mfrs-head">
+					<h1><a href="#">品牌制造商</a></h1>
+					<span class="f1">工厂直达消费者，剔除品牌溢价</span>
+					<div class="frmore">
+						<a href="#">更多制造商 ></a>
+					</div>
+				</div>
+				<div class="mfrs-list">
+					<a class="mfpic" href="#" style="margin-left: 0;">
+						<div class="name">CK制造商</div>
+						<div class="price">25元起</div>
+						<div class="mfpicture">
+							<img src="img/chen1.jpg" />
+						</div>
+					</a>
+					<a class="mfpic" href="#">
+						<div class="name">Kenneth cole制造商</div>
+						<div class="price">219元起</div>
+						<div class="mfpicture">
+							<img src="img/chen2.jpg" />
+						</div>
+					</a>
+					<a class="mfpic-s" href="#" style="margin-bottom: 6px;">
+						<div class="name">Ralph Lauren制造商</div>
+						<div class="price">19元起</div>
+						<div class="mfpicture-s">
+							<img src="img/chen3.jpg" />
+						</div>
+					</a>
+					<a class="mfpic-s" href="#">
+						<div class="name">海外制造商</div>
+						<div class="price">9.9元起</div>
+						<div class="mfpicture-s">
+							<img src="img/chen4.jpg" />
+						</div>
+					</a>	
+				</div>
+				<div class="newcate-head">
+					<h1><a href="#">新品首发</a></h1>
+					<span class="f1">周一周四上新，为你寻觅时间好物</span>
+					<div class="frmore">
+						<a href="#">更多新品 ></a>
+					</div>
+				</div>
+				<div class="newcate-list">
+					<div class="newpic-font" style="margin-left: 0;">
+						<a class="new-pic" href="#">
+							<img src="img/new1.png" onmouseover="this.src='img/new-cate1.jpg'" onmouseout="this.src='img/new1.png'"/>
+							<div class="newfont1">
+								<p class="PItemTag">
+									<span class="ItemTag">满额减</span>
+								</p>
+								<p class="name">
+									<h4>破壁机/冷热双杯</h4>
+								</p>
+								<p class="price">¥699</p>
+							</div>
+						</a>
+					</div>
+					<div class="newpic-font">
+						<a class="new-pic" href="#">
+							<div class="newfont-color">
+								<p>4色可选</p>
+							</div>
+							<img src="img/new2.png" onmouseover="this.src='img/new-cate2.jpg'" onmouseout="this.src='img/new2.png'"/>
+							<div class="newfont2">
+								<p class="name">
+									<h4>贝壳头儿童运动鞋</h4>
+								</p>
+								<p class="price">¥139 <font color="#999">| Adidas制造商</font></p>
+							</div>
+						</a>
+					</div>
+					<div class="newpic-font">
+						<a class="new-pic" href="#">
+							<div class="newfont-color">
+								<p>美国制造</p>
+							</div>
+							<img src="img/new3.png" onmouseover="this.src='img/new-cate3.jpg'" onmouseout="this.src='img/new3.png'"/>
+							<div class="newfont2">
+								<p class="name">
+									<h4>美国制造 除甲醛空气净化剂227g</h4>
+								</p>
+								<p class="price">¥145 <font color="#999">| 海外制造商</font></p>
+							</div>
+						</a>
+					</div>
+					<div class="newpic-font">
+						<a class="new-pic" href="#">
+							<img src="img/new4.png" onmouseover="this.src='img/new-cate4.jpg'" onmouseout="this.src='img/new4.png'"/>
+							<div class="newfont2">
+								<p class="name">
+									<h4>女式基础无钢圈文胸</h4>
+								</p>
+								<p class="price">¥99</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="popular-proes">
+				<div class="pro-head">
+					<h1><a href="#">人气推荐</a></h1>
+					<a href="#" class="editor-pro">&nbsp;编辑推荐&nbsp;</a>
+					<a href="#" class="hot-pro">热销总榜</a>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">更多推荐 ></a>
+					</div>
+				</div>
+				<div class="pro-list">
+					<div class="propic-font">
+						<a class="pro-pic" href="#">
+							<div class="profont-color">
+								<p>8色可选</p>
+							</div>
+							<div class="propic-left-container">
+								<img src="img/pro1.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<h4 style="font-size: 20px;"><a href="#">20寸全铝镁合金登机箱</a></h4>
+								</p>
+								<p class="price">¥559.2</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right">
+						<a class="pro-pic" href="#">
+							<!--<div class="profont-color">
+								<p>8色可选</p>
+							</div>-->
+							<div class="propic-right-container">
+								<img src="img/pro2.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">AB面独立弹簧床垫 进口乳垫</a>
+								</p>
+								<p class="price">¥2339.1</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right">
+						<a class="pro-pic" href="#">
+							<!--<div class="profont-color">
+								<p>8色可选</p>
+							</div>-->
+							<div class="propic-right-container">
+								<img src="img/pro4.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">日式和风声波式电动牙刷</a>
+								</p>
+								<p class="price">¥129</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right">
+						<a class="pro-pic" href="#">
+							<div class="profont-color">
+								<p>4色可选</p>
+							</div>
+							<div class="propic-right-container">
+								<img src="img/pro5.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">网易智造超静音变频直流风扇</a>
+								</p>
+								<p class="price">¥399</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right" style="margin-bottom: 0;">
+						<a class="pro-pic" href="#">
+							<div class="profont-color">
+								<p>爆品推荐</p>
+							</div>
+							<div class="propic-right-container">
+								<img src="img/pop-4.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">正宗果园柠檬片</a>
+								</p>
+								<p class="price">¥29.9</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right">
+						<a class="pro-pic" href="#">
+							<!--<div class="profont-color">
+								<p>8色可选</p>
+							</div>-->
+							<div class="propic-right-container">
+								<img src="img/pop-2.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">破壁料理机</a>
+								</p>
+								<p class="price">¥189</p>
+							</div>
+						</a>
+					</div>
+					<div class="propic-font-right" style="padding-bottom: 0; padding-left: 0;">
+						<a class="pro-pic" href="#">
+							<!--<div class="profont-color">
+								<p>8色可选</p>
+							</div>-->
+							<div class="propic-right-container">
+								<img src="img/pop-6.png"/>
+							</div>
+							<div class="profont">
+								<p class="name">
+									<a href="#">养生小秘诀</a>
+								</p>
+								<p class="price">¥49</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="limit-purchase">
+				<div class="limit-purchase-head">
+					<h1><a href="#">限时购</a></h1>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">更多抢购 ></a>
+					</div>
+				</div>
+				<div class="limit-purchase-list">
+					<div class="point-field">
+						<a href="#" class="point-field-picf">
+							<img src="img/sale-1.jpg" />	
+						</a>
+						<div class="point-field-font">
+							<h2>18点场</h2><br />
+							<div class="line"></div><br />
+							<h3>距离结束还剩</h3>
+							<div class="countDown">
+								<span id="num-hour" class="cd-num"></span>
+								<span>:</span>
+								<span id="num-minute" class="cd-num"></span>
+								<span>:</span>
+								<span id="num-second" class="cd-num"></span>
+							</div>
+							<p class="seemore">查看全部 ></p>
+						</div>
+					</div>
+						<a href="#" class="limit-purchase-pic">
+							<div class="limit-pic">
+								<img src="img/limit2.png"  />
+							</div>
+							<div class="font-right">
+								<p class="limit-title">网易智造随身低频按摩贴</p>
+								<p class="limit-intro">每天15分钟，快速缓解疲劳</p>
+								<div class="sale-volume">
+									<div class="numBar">
+										<div class="numIn"></div>
+									</div>
+									<span class="surplus">还剩482件</span>
+								</div>
+								<div class="limit-price">
+									<p class="now-price">限时价<font style="font-size: 24px; font-weight: bold;">¥179.1</font></p>
+									<p class="pre-price">原价<del>¥199</del></p>
+								</div>
+								<p class="rightnow">立即抢购</p>
+							</div>
+						</a>
+						<a href="#" class="limit-purchase-pic" style="border-left: 1px solid #f4f0ea;">
+							<div class="limit-pic">
+								<img src="img/sale-2.png"  />
+							</div>
+							<div class="font-right">
+								<p class="limit-title">网易智造随身低频按摩贴</p>
+								<p class="limit-intro">每天15分钟，快速缓解疲劳</p>
+								<div class="sale-volume">
+									<div class="numBar">
+										<div class="numIn"></div>
+									</div>
+									<span class="surplus">还剩482件</span>
+								</div>
+								<div class="limit-price">
+									<p class="now-price">限时价<font style="font-size: 24px; font-weight: bold;">¥179.1</font></p>
+									<p class="pre-price">原价<del>¥199</del></p>
+								</div>
+								<p class="rightnow">立即抢购</p>
+							</div>
+						</a>
+						<a href="#" class="limit-purchase-pic" style="border-top: 1px solid #f4f0ea;">
+							<div class="limit-pic">
+								<img src="img/limit3.png"  />
+							</div>
+							<div class="font-right">
+								<p class="limit-title">网易智造随身低频按摩贴</p>
+								<p class="limit-intro">每天15分钟，快速缓解疲劳</p>
+								<div class="sale-volume">
+									<div class="numBar">
+										<div class="numIn"></div>
+									</div>
+									<span class="surplus">还剩482件</span>
+								</div>
+								<div class="limit-price">
+									<p class="now-price">限时价<font style="font-size: 24px; font-weight: bold;">¥179.1</font></p>
+									<p class="pre-price">原价<del>¥199</del></p>
+								</div>
+								<p class="rightnow">立即抢购</p>
+							</div>
+						</a>
+						<a href="#" class="limit-purchase-pic" style="border-top: 1px solid #f4f0ea; border-left: 1px solid #f4f0ea;">
+							<div class="limit-pic">
+								<img src="img/limit4.png"  />
+							</div>
+							<div class="font-right">
+								<p class="limit-title">网易智造随身低频按摩贴</p>
+								<p class="limit-intro">每天15分钟，快速缓解疲劳</p>
+								<div class="sale-volume">
+									<div class="numBar">
+										<div class="numIn"></div>
+									</div>
+									<span class="surplus">还剩482件</span>
+								</div>
+								<div class="limit-price">
+									<p class="now-price">限时价<font style="font-size: 24px; font-weight: bold;">¥179.1</font></p>
+									<p class="pre-price">原价<del>¥199</del></p>
+								</div>
+								<p class="rightnow">立即抢购</p>
+							</div>
+						</a>
+				</div>
+			</div>
+			<div class="bonus-comunity">
+				<div class="bonus-head">
+					<h1><a href="#">福利社</a></h1>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多福利 ></a>
+					</div>
+				</div>
+				<div class="bonus-comunity-con">
+					<div class="bonus-list">
+						<a href="#" class="bonus-left">
+							<img src="img/bonu1.jpg"  onmouseover="this.src='img/bonus1-1.jpg'" onmouseleave="this.src='img/bonu1.jpg'"/>
+						</a>
+						<div class="bonus-pic">
+							<div class="bonus-pic-mid">
+								<div class="mid-head">
+									<span>今日特价</span>
+									<div class="bonus-more">
+										<a href="#" style="font-size: 12px;">查看全部 ></a>
+									</div>
+								</div>
+								<div class="mid-pic" style="margin-left: 15px;">
+									<a href="#">
+										<img src="img/bonus2.png"/>
+									</a>
+									<div class="mid-font">
+										<div class="mid-name">
+											<a href="#">男士全麻易打理短袖衬衫</a>
+										</div>
+										<p class="now-price">限时价<font style="font-size: 20px; font-weight: bold;">¥179.1</font></p>
+										<p class="pre-price">原价<del>¥199</del></p>
+										<p class="buynow"><a href="#" style="color: white;">立即抢购</a></p>
+									</div>
+								</div>
+								<div class="mid-pic">
+									<a href="#">
+										<img src="img/bonus3.png"/>
+									</a>
+									<div class="mid-font">
+										<div class="mid-name">
+											<a href="#">男士全麻易打理短袖衬衫</a>
+										</div>
+										<p class="now-price">限时价<font style="font-size: 20px; font-weight: bold;">¥179.1</font></p>
+										<p class="pre-price">原价<del>¥199</del></p>
+										<p class="buynow"><a href="#" style="color: white;">立即抢购</a></p>
+									</div>
+								</div>
+								<div class="mid-pic" style="margin-left: 15px;">
+									<a href="#">
+										<img src="img/bonus4.png"/>
+									</a>
+									<div class="mid-font">
+										<div class="mid-name">
+											<a href="#">男士全麻易打理短袖衬衫</a>
+										</div>
+										<p class="now-price">限时价<font style="font-size: 20px; font-weight: bold;">¥179.1</font></p>
+										<p class="pre-price">原价<del>¥199</del></p>
+										<p class="buynow"><a href="#" style="color: white;">立即抢购</a></p>
+									</div>
+								</div>
+								<div class="mid-pic">
+									<a href="#">
+										<img src="img/bonus5.jpg"/>
+									</a>
+									<div class="mid-font">
+										<div class="mid-name">
+											<a href="#">男士全麻易打理短袖衬衫</a>
+										</div>
+										<p class="now-price">限时价<font style="font-size: 20px; font-weight: bold;">¥179.1</font></p>
+										<p class="pre-price">原价<del>¥199</del></p>
+										<p class="buynow"><a href="#" style="color: white;">立即抢购</a></p>
+									</div>
+								</div>
+							</div>
+							<div class="bonus-pic-right1">
+								<div class="right-head">
+									<span>季节折扣</span>
+									<span style="font-size: 12px; float: right; margin-top: 5px;">全部></span>
+								</div>
+								<div class="right-detail">
+									<div class="right-pic" style="margin-top: 5px;">
+										<img src="img/bonus6.png" />
+									</div>
+									<div class="right-font">
+										<span style="margin-bottom: 20px;">男士莫代尔圆领T恤</span>
+										<span class="price"><font color="#BE4141">¥69</font>&nbsp;<del>¥99</del></span>
+									</div>
+									<br />
+									<div class="right-pic" style="margin-top: 20px;">
+										<img src="img/bonus7.png" />
+									</div>
+									<div class="right-font" style="margin-top: 20px;">
+										<span style="margin-bottom: 20px;">男士莫代尔圆领T恤</span>
+										<span class="price"><font color="#BE4141">¥69</font>&nbsp;<del>¥99</del></span>
+									</div>
+								</div>
+							</div>
+							<div class="bonus-pic-right1">
+								<div class="right-head">
+									<span>APP好价</span>
+									<span style="font-size: 12px; float: right; margin-top: 5px;">全部></span>
+								</div>
+								<div class="right-detail">
+									<div class="right-pic" style="margin-top: 5px;">
+										<img src="img/bonus8.jpg" />
+									</div>
+									<div class="right-font">
+										<span style="margin-bottom: 20px;">男士莫代尔圆领T恤</span>
+										<span class="price"><font color="#BE4141">¥69</font>&nbsp;<del>¥99</del></span>
+									</div>
+									<br />
+									<div class="right-pic" style="margin-top: 20px;">
+										<img src="img/bonus9.png" />
+									</div>
+									<div class="right-font" style="margin-top: 20px;">
+										<span style="margin-bottom: 20px;">男士莫代尔圆领T恤</span>
+										<span class="price"><font color="#BE4141">¥69</font>&nbsp;<del>¥99</del></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="onhouse">
+				<div class="onhouse-head">
+					<h1><a href="#">居家</a></h1>
+					<div class="onhouse-sort" style="margin-left: 550px;">
+						<a href="#"> &nbsp;夏凉 &nbsp;</a>/
+						<a href="#"> &nbsp;床品件套 &nbsp;</a>/
+						<a href="#"> &nbsp;被枕 &nbsp;</a>/
+						<a href="#"> &nbsp;家具 &nbsp;</a>/
+						<a href="#"> &nbsp;灯具 &nbsp;</a>/
+						<a href="#"> &nbsp;收纳 &nbsp;</a>/
+						<a href="#"> &nbsp;布艺软装 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/onhouse1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/onhuouse2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>天然宽蔑头层青碳化竹凉席</h4>
+							</p><p class="price">¥237</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>4色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/onhuouse3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">午睡特惠</span>
+							</p>
+							<p class="name">
+								<h4>日式蓬软太鼓抱枕</h4>
+							</p><p class="price">¥26.1</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>2色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/onhuouse4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>网易智造台灯</h4>
+							</p><p class="price">¥129</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/onhuouse5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">今日特价</span>
+							</p>
+							<p class="name">
+								<h4>全期猫粮 1.8kg</h4>
+							</p><p class="price">¥74.8</p>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="shoesbag">
+				<div class="onhouse-head">
+					<h1><a href="#">鞋包配饰</a></h1>
+					<div class="onhouse-sort" style="margin-left: 490px;">
+						<a href="#"> &nbsp;行李箱 &nbsp;</a>/
+						<a href="#"> &nbsp;男士包袋 &nbsp;</a>/
+						<a href="#"> &nbsp;女式包袋 &nbsp;</a>/
+						<a href="#"> &nbsp;钱包及小皮件 &nbsp;</a>/
+						<a href="#"> &nbsp;女鞋 &nbsp;</a>/
+						<a href="#"> &nbsp;男鞋 &nbsp;</a>/
+						<a href="#"> &nbsp;拖鞋 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/shoes1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="profont-color">
+							<p>2色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/shoes2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满折</span>
+							</p>
+							<p class="name">
+								<h4>水钻方扣平底夹脚凉鞋</h4>
+							</p><p class="price">¥269</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/shoes3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">午睡特惠</span>
+							</p>
+							<p class="name">
+								<h4>5双装 雪丝竹节纹男式隐形袜</h4>
+							</p><p class="price">¥39</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>9色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/shoes4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>20寸 纯PC"铝框(非全铝)"登机箱</h4>
+							</p><p class="price">¥349</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/shoes5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">夏日特惠</span>
+							</p>
+							<p class="name">
+								<h4>夏日遮阳冰袖</h4>
+							</p><p class="price">¥19</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clothing">
+				<div class="onhouse-head">
+					<h1><a href="#">服装</a></h1>
+					<div class="onhouse-sort" style="margin-left: 620px;">
+						<a href="#"> &nbsp;T恤 &nbsp;</a>/
+						<a href="#"> &nbsp;运动 &nbsp;</a>/
+						<a href="#"> &nbsp;衬衫 &nbsp;</a>/
+						<a href="#"> &nbsp;牛仔 &nbsp;</a>/
+						<a href="#"> &nbsp;裤装 &nbsp;</a>/
+						<a href="#"> &nbsp;内衣 &nbsp;</a>/
+						<a href="#"> &nbsp;内裤 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/cloth1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/cloth2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满折</span>
+							</p>
+							<p class="name">
+								<h4>男式针织棉家居短裤</h4>
+							</p><p class="price">¥49</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>4色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/cloth3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">爆品</span>
+							</p>
+							<p class="name">
+								<h4>男式自由体商务休闲裤</h4>
+							</p><p class="price">¥269</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>2色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/cloth4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">爆品</span>
+							</p>
+							<p class="name">
+								<h4>男式水柔棉经典POLO衫</h4>
+							</p><p class="price">¥129</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/cloth5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">夏日特惠</span>
+							</p>
+							<p class="name">
+								<h4>男式120支丝光莫代尔T恤</h4>
+							</p><p class="price">¥139.3</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="electric-mach">
+				<div class="onhouse-head">
+					<h1><a href="#">电器</a></h1>
+					<div class="onhouse-sort" style="margin-left: 610px;">
+						<a href="#"> &nbsp;生活电器&nbsp;</a>/
+						<a href="#"> &nbsp;厨房电器 &nbsp;</a>/
+						<a href="#"> &nbsp;个护健康 &nbsp;</a>/
+						<a href="#"> &nbsp;数码 &nbsp;</a>/
+						<a href="#"> &nbsp;影音娱乐 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/elec1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/elec2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>车载磁吸手机支架</h4>
+							</p><p class="price">¥39</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>4色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/elec3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额赠</span>
+							</p>
+							<p class="name">
+								<h4>便携手持挂烫机</h4>
+							</p><p class="price">¥119</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>2色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/elec4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满赠</span>
+							</p>
+							<p class="name">
+								<h4>电动式硅胶洁面仪</h4>
+							</p><p class="price">¥119</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/elec5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">今日特价</span>
+							</p>
+							<p class="name">
+								<h4>网易智造零感蓝牙耳机</h4>
+							</p><p class="price">¥74.8</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="shower">
+				<div class="onhouse-head">
+					<h1><a href="#">洗护</a></h1>
+					<div class="onhouse-sort" style="margin-left: 450px;">
+						<a href="#"> &nbsp;纸品湿巾 &nbsp;</a>/
+						<a href="#"> &nbsp;家庭清洁 &nbsp;</a>/
+						<a href="#"> &nbsp;生理用品 &nbsp;</a>/
+						<a href="#"> &nbsp;毛巾 &nbsp;</a>/
+						<a href="#"> &nbsp;美妆 &nbsp;</a>/
+						<a href="#"> &nbsp;面部口腔护理 &nbsp;</a>/
+						<a href="#"> &nbsp;身体护理 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/shower1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/shower2.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>深层净澈成人衣物洗衣液</h4>
+							</p><p class="price">¥39.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>4色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/shower3.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>日式和风简约无盖垃圾桶</h4>
+							</p><p class="price">¥12.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>2色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/shower4.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>丝瓜络长柄沐浴刷</h4>
+							</p><p class="price">¥19.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/shower5.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>50支装 圆线牙线棒</h4>
+							</p><p class="price">¥9.9</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="food">
+				<div class="onhouse-head">
+					<h1><a href="#">饮食</a></h1>
+					<div class="onhouse-sort">
+						<a href="#"> &nbsp;世界杯美食 &nbsp;</a>/
+						<a href="#"> &nbsp;糕点 &nbsp;</a>/
+						<a href="#"> &nbsp;小食 &nbsp;</a>/
+						<a href="#"> &nbsp;坚果炒货 &nbsp;</a>/
+						<a href="#"> &nbsp;果干 &nbsp;</a>/
+						<a href="#"> &nbsp;肉类零食 &nbsp;</a>/
+						<a href="#"> &nbsp;冲饮 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/food1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/food2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">N元任选</span>
+							</p>
+							<p class="name">
+								<h4>每日坚果(4种坚果+3种果干)</h4>
+							</p><p class="price">¥35.8</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/food3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">N元任选</span>
+							</p>
+							<p class="name">
+								<h4>牛肉粒 100g</h4>
+							</p><p class="price">¥18</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/food4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">N元任选</span>
+							</p>
+							<p class="name">
+								<h4>芒果干 118g</h4>
+							</p><p class="price">¥12.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/food5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">N元任选</span>
+							</p>
+							<p class="name">
+								<h4>脆脆虾 20克</h4>
+							</p><p class="price">¥18</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="kitchen">
+				<div class="onhouse-head">
+					<h1><a href="#">餐厨</a></h1>
+					<div class="onhouse-sort" style="margin-left: 430px;">
+						<a href="#"> &nbsp;水具杯壶 &nbsp;</a>/
+						<a href="#"> &nbsp;餐具 &nbsp;</a>/
+						<a href="#"> &nbsp;锅具 &nbsp;</a>/
+						<a href="#"> &nbsp;清洁保鲜 &nbsp;</a>/
+						<a href="#"> &nbsp;厨房配件 &nbsp;</a>/
+						<a href="#"> &nbsp;刀剪砧板 &nbsp;</a>/
+						<a href="#"> &nbsp;茶具咖啡具酒具 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/kitchen1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/kitchen2.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>素风 调味瓶罐收纳架</h4>
+							</p><p class="price">¥79</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/kitchen3.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>双底面淘米洗菜蓝</h4>
+							</p><p class="price">¥29.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/kitchen4.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>高硅硼玻璃凉水壶</h4>
+							</p><p class="price">¥89</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/kitchen5.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>单件装 德式不锈钢刀系列</h4>
+							</p><p class="price">¥78</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="baby-kid">
+				<div class="onhouse-head">
+					<h1><a href="#">婴童</a></h1>
+					<div class="onhouse-sort" style="margin-left: 480px;">
+						<a href="#"> &nbsp;暑假好物 &nbsp;</a>/
+						<a href="#"> &nbsp;新生儿服装 &nbsp;</a>/
+						<a href="#"> &nbsp;中大童服装 &nbsp;</a>/
+						<a href="#"> &nbsp;内衣搭配 &nbsp;</a>/
+						<a href="#"> &nbsp;童鞋童包 &nbsp;</a>/
+						<a href="#"> &nbsp;婴童洗护 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/baby1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/baby1.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>儿童智能电子琴</h4>
+							</p><p class="price">¥1799</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>4色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/baby2.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>开口笑儿童运动凉鞋</h4>
+							</p><p class="price">¥159</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>6色可选</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/baby3.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>儿童伸缩衣架</h4>
+							</p><p class="price">¥19</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/baby4.png" />
+						</div>
+						<div class="housefont">
+							<p class="name">
+								<h4>孕产妇哺乳文胸内裤套装</h4>
+							</p><p class="price">¥79</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wenti">
+				<div class="onhouse-head">
+					<h1><a href="#">文体</a></h1>
+					<div class="onhouse-sort" style="margin-left: 490px;">
+						<a href="#"> &nbsp;文具 &nbsp;</a>/
+						<a href="#"> &nbsp;运动户外 &nbsp;</a>/
+						<a href="#"> &nbsp;唱片 &nbsp;</a>/
+						<a href="#"> &nbsp;礼品卡 &nbsp;</a>/
+						<a href="#"> &nbsp;游戏点卡 &nbsp;</a>/
+						<a href="#"> &nbsp;暴雪周边 &nbsp;</a>/
+						<a href="#"> &nbsp;我的周边 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/wenti1.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/wenti2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>龙珠Z 永远的小悟空 T恤 红/白/黑</h4>
+							</p><p class="price">¥87</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/wenti3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">盛夏清凉节</span>
+							</p>
+							<p class="name">
+								<h4>成人款-大框游泳眼镜</h4>
+							</p><p class="price">¥36</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/wenti4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">满额减</span>
+							</p>
+							<p class="name">
+								<h4>3支装 直杆三角中性笔</h4>
+							</p><p class="price">¥9.9</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/wenti5.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">新品</span>
+							</p>
+							<p class="name">
+								<h4>小猪钢笔套装</h4>
+							</p><p class="price">¥69</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="special">
+				<div class="onhouse-head">
+					<h1><a href="#">特色区</a></h1>
+					<div class="onhouse-sort" style="margin-left: 490px;">
+						<a href="#"> &nbsp;日本馆 &nbsp;</a>/
+						<a href="#"> &nbsp;韩国馆 &nbsp;</a>/
+						<a href="#"> &nbsp;东南亚馆 &nbsp;</a>/
+						<a href="#"> &nbsp;欧美馆 &nbsp;</a>/
+						<a href="#"> &nbsp;澳新馆 &nbsp;</a>/
+						<a href="#"> &nbsp;智造馆 &nbsp;</a>/
+						<a href="#"> &nbsp;春凤馆 &nbsp;</a>
+					</div>
+					<div class="frmore">
+						<a href="#" style="font-size: 14px;">查看更多 ></a>
+					</div>
+				</div>
+				<div class="onhouse-banner">
+					<img src="img/spe.jpg"/>
+				</div>
+				<div class="onhouse-list">
+					<div class="onhouse-pic" href="#" style="margin-left: 0;">
+						<div class="onhouse-con">
+					  		<img src="img/spe1.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">居家特惠</span>
+							</p>
+							<p class="name">
+								<h4>韩国制造 lazyman创意抱枕桌</h4>
+							</p><p class="price">¥175</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>日本制造</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/spe2.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">爆品</span>
+							</p>
+							<p class="name">
+								<h4>日本AKOYA海水珍珠项链 18K金</h4>
+							</p><p class="price">¥999</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="profont-color">
+							<p>泰国制造</p>
+						</div>
+						<div class="onhouse-con">
+					  		<img src="img/spe3.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">居家特惠</span>
+							</p>
+							<p class="name">
+								<h4>天然乳胶床垫 7.5CM加厚款</h4>
+							</p><p class="price">¥2559</p>
+						</div>
+					</div>
+					<div class="onhouse-pic" href="#">
+						<div class="onhouse-con">
+					  		<img src="img/spe4.png" />
+						</div>
+						<div class="housefont">
+							<p class="PItemTag">
+								<span class="ItemTag">盛夏清凉节</span>
+							</p>
+							<p class="name">
+								<h4>网易智造减压按摩腰靠</h4>
+							</p><p class="price">¥255</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="zhenxuan">
+				<div class="zhen-head">
+					<h1><a href="#">甄选家</a></h1>
+					<span>我们在寻找，对生活有态度的人</span>
+				</div>
+				<div>
+					<a href="#" style="float: left;">
+						<img src="img/selectionLarge.jpg"/>
+					</a>
+						<a href="#" style="float: right; margin-bottom: 6px;">
+							<img src="img/selection1.jpg"/>
+						</a>
+						<a href="#" style="float: right;">
+							<img src="img/selection2.jpg"/>
+						</a>
+				</div>
+			</div>
+			<div class="allpeople">
+				<div class="all-head">
+					<h1><a href="#">大家都在说</a></h1>
+					<span>生活，没有统一标准</span>
+				</div>
+				<!--轮播图整体div-->
+				<div class="banner1">
+				    <!--无序列表承载轮播的图片-->
+				    <div class="img1">
+						<div>
+						<li class="lun-item" style="margin-left: 0;">
+							<div class="limg">
+								<a href="#"><img src="img/all1.jpg" width="100%" height="100%"/></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all4.jpg" /></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">I****7 &nbsp;&nbsp;2018-06-27 &nbsp;&nbsp;21:30</div>
+								<div class="lpinming">
+									<a href="#"><strong>法国大溪地黑珍珠项链...</strong></a>
+									<span class="price">¥1399</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">质量相当不错，非常喜欢，闺蜜们都夸好看。价格也不贵，买来随便戴戴</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all3.jpg" width="100%" height="100%"/></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">S****q &nbsp;&nbsp;2018-05-26 &nbsp;&nbsp;09:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>网易 智造充电式小台灯...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">我是一个程序员，网易的这款台灯非常不错，方便而且灯光也非常柔和</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all2.jpg" width="100%" height="100%"/></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all5.jpg" width="100%" height="100%" /></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all6.jpg" width="100%" height="100%" /></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all7.jpg" width="100%" height="100%" /></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+						<div>
+						<li class="lun-item">
+							<div class="limg">
+								<a href="#"><img src="img/all8.jpg" width="100%" height="100%" /></a>
+							</div>
+							<div class="lcontent">
+								<div class="lcontent-id">M****q &nbsp;&nbsp;2018-06-26 &nbsp;&nbsp;14:21</div>
+								<div class="lpinming">
+									<a href="#"><strong>Cream blue系列 十只装...</strong></a>
+									<span class="price">¥199</span>
+								</div>
+								<div class="comment" style="margin-left: 10px;">不错，很划算，化妆小白</div>
+							</div>
+						</li>
+						</div>
+				</div>
+				    <!--用来放置圆点具体实施在js代码中呈现-->
+				    <ul class="num1"></ul>
+				    <!--左右点击按钮-->
+				    <div class="btn">
+				        <span class="prev1">
+							<img src="img/箭头左.png" style="width: 50px;height: 50px" >
+						</span>
+				        <span class="next1"><img src="img/箭头右.png" style="width: 50px;height: 50px;"></span>
+				    </div>
+				</div>
+			</div>
+		</article>
+		<div id="footer1">
+				<div class="foot-ensure-item ensure-item11">
+					<h4 class="text-title">客户服务</h4>
+					<div class="ensure-item1">
+						<div class="ensure-item1-content">
+							<div id="image_s">
+								<img src="images/service.png"width="40px" height="40px" >
+								<p>在线客服</p>
+							</div>
+						</div>
+						<div class="ensure-item1-content">
+							<div id="image_s">
+								<img src="images/消息.png"width="40px" height="40px" >
+								<p>用户反馈</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="foot-ensure-item">
+					<h4 class="text-title">何为严选</h4>
+						<div id="ensure-item2">
+							<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+						</div>
+					
+						<div id="guanzhu">
+							关注我们：
+						</div>
+						<div id="wqx">
+							<img src="images/wtx.png" height="32px" >
+						</div>
+				</div>
+				<div class="foot-ensure-item ensure-item33">
+					<h4 class="text-title">扫码下载严选APP</h4>
+						<div id="ensure-item3">
+							<img src="images/qr.png"  >
+						</div>
+				</div>
+			</div>
+		<div class="footer2">
+				<div class="footer2-ensure-item">
+					<div class="first-row">
+						<ul class="ensure">
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f1"></i>
+									<p class="text2">30天无忧退货</p>
+								</div>
+							</li>
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f2"></i>
+									<p class="text2">满88元免邮费</p>
+								</div>
+							</li>
+							<li class="ensure-item">
+								<div class="item-inner">
+									<i class="icon icon-f3"></i>
+									<p class="text2">网易品质保证</p>
+								</div>
+							</li>
+						</ul>
+						<hr>
+						<div class="m-siteInfo">
+							<nav class="nav-1">
+								<a class="text2 text2-color" href="javascript:;">关于我们</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">售后服务</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">商务合作</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">企业采购</a>
+								<b class="split">|</b>
+								<a class="text2 text2-color" href="javascript:;">友情链接</a>
+							</nav>
+							<p class="copyright">
+								网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+							</p>
+							<a class="businessAdmin" href="javascript:;">
+								<img src="./images/admin.gif" width="36" height="39" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+	</body>
+	<script type="text/javascript" src="js/yanxuan.js" ></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/动态菜单.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/标题固定.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript">
+		document.getElementById("sddasd").innerHTML=utel;
+	$(function(){
+	    //定义i变量为动态控制图片轮播做准备，i的值与每张图片进行一一的对应
+	    var i=0;
+	    //时间变量，为自动轮播以及对光标的影响做出相应的反应
+	    var timer=null;
+	    //根据图片的张数动态添加圆点个数
+	    for (var j = 0; j < $('.img li').length; j++) {
+	        $('.num').append('<li></li>');
+	    }
+	    console.log($('.img li').length)
+	    //默认情况下的第一个圆点进行背景设计
+	    $('.num li').first().addClass('active');
+	    //根据光标的影响控制按钮的显示和隐藏
+	    $('.banner').hover(function(){
+	        $('.btn').show();
+	    },function(){
+	        $('.btn').hide();
+	    });
+	    //将第一张图片复制并添加到img部分下与前五张图片相接
+	    var firstimg=$('.img li').first().clone(); //复制第一张图片
+	    $('.img').append(firstimg).width($('.img li').length*($('.img img').width()));
+	    //定时器自动轮播
+	    timer=setInterval(function(){
+	        i++;
+	        if (i==$('.img li').length) {
+	            i=1;
+	            $('.img').css({left:0});//保证无缝轮播，设置left值
+	        }
+	        //进行下一张图片
+	        $('.img').stop().animate({left:-i*1920},500);
+	        //圆点跟着变化
+	        if (i==$('.img li').length-1) {
+	            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	        }else{
+	            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	        }
+	    },3000);
+	    //鼠标移入，暂停自动播放，移出，开始自动播放
+	    $('.banner').hover(function(){
+	        clearInterval(timer);
+	    },function(){
+	        timer=setInterval(function(){
+	            i++;
+	            if (i==$('.img li').length) {
+	                i=1;
+	                $('.img').css({left:0});
+	            };
+	            //进行下一张图片
+	            $('.img').stop().animate({left:-i*1920},500);
+	            //圆点跟着变化
+	            if (i==$('.img li').length-1) {
+	                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	            }else{
+	                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	            }
+	        },3000)
+	    });
+	    //上一个按钮
+	    $('.prev').click(function(){
+	        i--;
+	        if (i==-1) {
+	            i=$('.img li').length-2;
+	            $('.img').css({left:-($('.img li').length-1)*1920});
+	        }
+	        $('.img').stop().animate({left:-i*1920},500);
+	        $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	    });
+	    // 下一个按钮
+	    $('.next').click(function(){
+	        i++;
+	        if (i==$('.img li').length) {
+	            i=1; //这里不是i=0
+	            $('.img').css({left:0});
+	        };
+	        $('.img').stop().animate({left:-i*1920},500);
+	        if (i==$('.img li').length-1) { //设置小圆点指示
+	            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+	        }else{
+	            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+	        };
+	 
+	    });
+	    //鼠标划入圆点
+	    $('.num li').mouseover(function(){
+	        var _index=$(this).index();
+	        //维持i变量控制的对应关系不变
+	        i = _index;                 
+	        $('.img').stop().animate({left:-_index*1920},300);
+	        $('.num li').eq(_index).addClass('active').siblings().removeClass('active');
+	    });
+	 
+	})
+</script>
+</html>

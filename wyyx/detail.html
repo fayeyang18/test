@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>女式纯棉百搭圆领T恤</title>
+		<link rel="stylesheet" href="css/detail.css" />
+		<link rel="stylesheet" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+		<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var utel = window_request_paramter("utel");
+			var p_id = window_request_paramter("p_id");
+		</script>
+	</head>
+	<body>
+		<div id="header">
+				<div id="top">
+					<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+						<p>好的生活，没那么贵</p>
+					</div>
+					<div id="nav">
+						<div class="title">
+							<a href="order.html" class="title-nav">我的订单</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">会员</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">甄选家</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">企业采购</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">客户服务</a>
+						</div>
+						<div class="title">
+							<a href="#" class="title-nav">APP</a>
+						</div>
+					</div>
+				</div>
+				<div id="low">
+					<div>
+						<a href="index.html" class="tab-logo"></a>
+					</div>
+					<div class="search">
+						<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+						<a class="icon-search" href="#" id="searchid"></a>
+						<a v-bind:href="'shopping_cart.html?utel='+utel" class="icon-cart" href="#"> </a>
+						<a v-bind:href="'shopping_cart.html?utel='+utel" class="cart-num">{{num.num}}</a>
+					</div>
+					<div class="wrap wrap-display wrap0">
+							<div class="m-hot-search-words">
+									<ul class="search_list">
+										<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+										<div class="delete history">
+										</div>
+										<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+											<li class="search_list_item hot">鞋包3件85折</li>
+											<li class="search_list_item hot">午睡神器特惠</li>
+											<li class="search_list_item hot">床垫</li>
+											<li class="search_list_item hot">服饰买2免1</li>
+											<li class="search_list_item hot">反季特惠</li>
+									</ul>
+							</div>
+				</div>
+				</div>
+				
+				<div id="nav-1">
+				<div id="main-nav">
+						<ul class="nav">
+							<li class="nav-item">
+								<a href="#" class="topLevel" >首页</a>
+							</li>
+							<li class="nav-item" v-for="nav in firstnav" >
+								<a class="topLevel" href="#">{{nav.name}}</a>
+								<ul class="card-list">
+									<div class="card">
+										<li class="item" v-for="nav_2 in nav.card_list">
+											<a class="nav-subCate" href="javascript:;">
+												<img class="icon" v-bind:src="nav_2.img" />
+												<p class="text">{{nav_2.card_name}}</p>
+											</a>
+										</li>
+										
+									</div>
+								</ul>
+							</li>	
+							
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		
+		<hr color="#F5F5F5" />
+		<div id="zhengti">
+				<div class="xiaodaohang">
+				<span class="xuanxiang"><a href="../">首页</a> ></span>
+				<span class="xuanxiang"><a href="class.html">服装</a> ></span>
+				<span class="xuanxiang"><a href="class.html">T恤</a> ></span>
+				<span class="xuanxiang">{{good_detail.name}}</span>
+			</div>
+			
+				<div class="m-detail">
+				<div class="detailHead">
+					<div class="detailLeft">
+						<div class="detailLeft-1">
+							<iframe  id="frame1" v-bind:src="good_detail.bigimg1" name="mainframe" width="430px" height="430px" frameborder="0"></iframe>
+						</div>
+						<div class="detailLeft-2">
+							<ul>
+								<li><a v-bind:href="good_detail.bigimg1" v-on:mouseenter="showimg(good_detail.bigimg1)" target="mainframe"><img v-bind:src="good_detail.img1"   width="74px" height="74px"/></a></li>
+								<li><a v-bind:href="good_detail.bigimg2" v-on:mouseenter="showimg(good_detail.bigimg2)" target="mainframe"><img v-bind:src="good_detail.img2" width="74px" height="74px"/></a></li>
+								<li><a v-bind:href="good_detail.bigimg3" v-on:mouseenter="showimg(good_detail.bigimg3)" target="mainframe"><img v-bind:src="good_detail.img3" width="74px" height="74px"/></a></li>
+								<li><a v-bind:href="good_detail.bigimg4" v-on:mouseenter="showimg(good_detail.bigimg4)" target="mainframe"><img v-bind:src="good_detail.img4" width="74px" height="74px"/></a></li>
+								<li><a v-bind:href="good_detail.bigimg5" v-on:mouseenter="showimg(good_detail.bigimg5)" target="mainframe"><img v-bind:src="good_detail.img5" width="74px" height="74px"/></a></li>
+							</ul>
+						</div>
+					</div>
+				<div class="detailRight">
+						<div class="intro">
+							<div class="name">{{good_detail.name}}</div>
+							<div class="desc">{{good_detail.desc}}</div>
+						</div>
+						<div class="price">
+							<div class="sale-price">
+								<span class="label-1">价格</span>
+								<span class="label-2">
+									<span class="rmb">¥</span>
+									<span class="jiage">{{good_detail.price}}</span>
+								</span>
+							</div>
+							<div class="sale-more">
+								<span class="m1">积分</span>
+								<span class="m2">购买最高可得4积分</span>
+							</div>
+							<div class="sale-service">
+								<span class="s1">服务</span>
+								<span class="s2">
+										<span>·满88元包邮</span>
+										<span>·网易自营品牌</span>
+										<span>·48小时快速退款</span>
+								</span>
+							</div>
+						</div>
+						
+						<div class="yanse">
+							<p class="y1">颜色</p>
+							<span class="y2">
+							<a v-bind:href="good_detail.bigcolorimg1" target="mainframe" title="白色"><img class="color selected" v-bind:src="good_detail.colorimg1"  width="46px" height="46px"  v-on:click="imgcolor(good_detail.colorimg1)"  /></a>
+							<a v-bind:href="good_detail.bigcolorimg2" target="mainframe" title="麻灰色"><img class="color selected" v-bind:src="good_detail.colorimg2" width="46px" height="46px"  v-on:click="imgcolor(good_detail.colorimg2)" /></a>
+							<a v-bind:href="good_detail.bigcolorimg3" target="mainframe" title="黑色"><img class="color selected" v-bind:src="good_detail.colorimg3" width="46px" height="46px" v-on:click="imgcolor(good_detail.colorimg3)" /></a>
+							</span>
+						</div>
+						
+						<div class="guige">
+							<span class="g1">规格</span>
+							<span class="g2 gselected"><a href="javascript:;" v-on:click="size(good_detail.size1)">{{good_detail.size1}}</a></span>
+							<span class="g2 gselected"><a href="javascript:;" v-on:click="size(good_detail.size2)">{{good_detail.size2}}</a></span>
+							<span class="g2 gselected"><a href="javascript:;" v-on:click="size(good_detail.size3)">{{good_detail.size3}}</a></span>
+						</div>
+					
+						<!--<div class="guige">
+							<span class="g1">规格</span>
+							<span v-bind:value="1" v-bind:class="{'g3':ind==value}" v-on:click="changeind(this)"><a href="javascript:;" v-on:click="size(good_detail.size1)">{{good_detail.size1}}</a></span>
+							<span v-bind:value="2" v-bind:class="{'g3':ind==value}" v-on:click="changeind(this)" ><a href="javascript:;" v-on:click="size(good_detail.size2)">{{good_detail.size2}}</a></span>
+							<span  v-bind:value="3" v-bind:class="{'g3':ind==value}" v-on:click="changeind(this)" ><a href="javascript:;" v-on:click="size(good_detail.size3)">{{good_detail.size3}}</a></span>
+						</div>
+					-->
+						
+						<div class="shuliang">
+							<span>数量</span>
+							<span class="count">
+								<span class="count1"><a href="javascript:;" v-on:click="sub">-</a></span>
+								<span class="count2"><input class="count3" type="text" v-model="good_end.num" />
+								</span>
+								<span class="count1"><a href="javascript:;" v-on:click="add">+</a></span>
+							</span>
+						</div>
+						<div class="fukuan">
+							<div class="lijigoumai"><a v-on:click="buy">立即购买</a></div>
+							<div class="jiagou"><a v-on:click="addto" id="success" style="cursor: pointer;"><img src="img/购物车.png" width="21px" height="21px" />加入购物车</a></div>
+							<div class="shoucang"><a href="#" title="点击收藏">
+								<span title=""><img src="img/收藏.png" width="18px" height="18px" title="点击收藏"/></span>
+								<p>收藏</p></a>
+							</div>
+						</div>
+					</div>
+	
+			<p class="clear"></p>
+				</div>
+
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+	<h3 id="like">大家都在看</h3>
+<!--轮播图整体div-->
+	<div class="banner">
+    <!--无序列表承载轮播的图片-->
+		<div class="img">
+		<div>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun1.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">100%纯棉女式纯棉V领T恤</a></div>
+				<div class="ljiage">¥49</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun2.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">男式基础色织纯棉圆领T恤</a></div>
+				<div class="ljiage">¥29.9</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun3.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">女式荧光字母印花T恤</a></div>
+				<div class="ljiage">¥89</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun4.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">女式复古字母T恤衫</a></div>
+				<div class="ljiage">¥89</div>
+			</div>
+		</li>
+		</div>
+		<div>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun1.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">100%纯棉女式纯棉V领T恤</a></div>
+				<div class="ljiage">¥49</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun2.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">男式基础色织纯棉圆领T恤</a></div>
+				<div class="ljiage">¥29.9</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun3.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">女式荧光字母印花T恤</a></div>
+				<div class="ljiage">¥89</div>
+			</div>
+		</li>
+		<li class="lun-item">
+			<div class="limg">
+				<a href="#"><img src="img/lun4.png" width="210px" height="210px" /></a>
+			</div>
+			<div class="lcontent">
+				<div class="lpinming"><a href="#">女式复古字母T恤衫</a></div>
+				<div class="ljiage">¥89</div>
+			</div>
+		</li>
+		</div>
+	</div>
+    <!--用来放置圆点具体实施在js代码中呈现-->
+    <ul class="num"></ul>
+    <!--左右点击按钮-->
+    <div class="btn">
+        <span class="prev">
+			<img src="img/箭头左.png" style="width: 50px;height: 50px" >
+		</span>
+        <span class="next"><img src="img/箭头右.png" style="width: 50px;height: 50px;"></span>
+    </div>
+</div>
+
+				
+				<div class="detailBody">
+					<div class="detailBodyLeft">
+						<div class="label">
+							<div class="xiangqing"><a href="#"> 详情</a></div>
+							<div class="pingjia"><a href="#"> 评价(99+)</a></div>
+						</div>
+						<div class="jieshao">
+							<ul class="jieshao1">
+								<li class="li-item">
+									<span class="lname">适用季节</span>
+									<span class="value">春季、夏季</span>
+									</li>
+								<li class="li-item">
+									<span class="lname">适用人群</span>
+									<span class="value">女士</span>
+									</li>
+								<li class="li-item">
+									<span class="lname">面料</span>
+									<span class="value">100%棉</span>
+									</li>
+								<li class="li-item" style="border-bottom: none;">
+									<span class="lname">售后服务</span>
+									<span class="value">本品适用服装产品退换货政策，承诺30天无忧退换。非质量问题的退换货请确保商品无磨损、污渍等影响二次销售的影响因素，不要剪开吊牌、吊线（如有），并保持内包装完好，否则不予退换，敬请谅解。</span>
+									</li>
+							</ul>
+							<div class="tupian">
+								<p>
+									<img src="img/detail1.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail2.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail3.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail4.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail5.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail6.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail7.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail8.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail9.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail10.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail11.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail12.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail13.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail14.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail15.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail16.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail17.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail18.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail19.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail20.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail21.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail22.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail23.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail24.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail25.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail26.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail27.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail28.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail29.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail30.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail31.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail32.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail33.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail34.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail35.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail36.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail37.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail38.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail39.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail40.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail41.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail42.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail43.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail44.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail45.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail46.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail47.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail48.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail49.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail50.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail51.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail52.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail53.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail54.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail55.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail56.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail57.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail58.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail59.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail60.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail61.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail62.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail63.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail64.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail65.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail66.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail67.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail68.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail69.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail70.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail71.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail72.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail73.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail74.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail75.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail76.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail77.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail78.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail79.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail80.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail81.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail82.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail83.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail84.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail85.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail86.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail87.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail88.jpg" width="750px" height="200px" />
+								</p>
+								<p>
+									<img src="img/detail89.jpg" width="750px" height="200px" />
+								</p>
+							</div>
+						</div>
+						
+					</div>
+					<div class="detailBodyRight">
+						<div class="hotsell">
+							<div class="hTitle">24小时热销榜</div>
+							<div class="hsale">
+								<ul class="hgoods">
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h1.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent">
+											<div class="hpinming"><a href="#">玩趣彩虹四季拖鞋</a></div>
+											<div class="hjiage">¥19.9</div>
+										</div>
+									</li>
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h2.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent">
+											<div class="hpinming"><a href="#">炭火烤肠 150克</a></div>
+											<div class="hjiage">¥18</div>
+										</div>
+									</li>
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h3.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent">
+											<div class="hpinming"><a href="#">鲜果冻 180克(6枚入)</a></div>
+											<div class="hjiage">¥14</div>
+										</div>
+									</li>
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h4.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent">
+											<div class="hpinming"><a href="#">绿豆糕</a></div>
+											<div class="hjiage">¥10.4</div>
+										</div>
+									</li>
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h5.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent">
+											<div class="hpinming"><a href="#">芒果干 118克</a></div>
+											<div class="hjiage">¥16</div>
+										</div>
+									</li>
+									<li class="hitems">
+										<div class="himg">
+											<a href="#"><img src="img/h6.png" width="250px" height="250px" /></a>
+										</div>
+										<div class="hcontent" style="border-bottom: none;">
+											<div class="hpinming"><a href="#">2元礼品卡-竞选世界杯夺奔驰</a></div>
+											<div class="hjiage">¥2</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			</div>
+		<div id="footer1">
+		<div class="foot-ensure-item ensure-item11">
+			<h4 class="text-title">客户服务</h4>
+			<div class="ensure-item1">
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/service.png"width="40px" height="40px" >
+						<p>在线客服</p>
+					</div>
+				</div>
+				<div class="ensure-item1-content">
+					<div id="image_s">
+						<img src="images/消息.png"width="40px" height="40px" >
+						<p>用户反馈</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot-ensure-item">
+			<h4 class="text-title">何为严选</h4>
+				<div id="ensure-item2">
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+				</div>
+			
+				<div id="guanzhu">
+					关注我们：
+				</div>
+				<div id="wqx">
+					<img src="images/wtx.png" height="32px" >
+				</div>
+		</div>
+		<div class="foot-ensure-item ensure-item33">
+			<h4 class="text-title">扫码下载严选APP</h4>
+				<div id="ensure-item3">
+					<img src="images/qr.png"  >
+				</div>
+		</div>
+	</div>
+	<div class="footer2">
+		<div class="footer2-ensure-item">
+			<div class="first-row">
+				<ul class="ensure">
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f1"></i>
+							<p class="text2">30天无忧退货</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f2"></i>
+							<p class="text2">满88元免邮费</p>
+						</div>
+					</li>
+					<li class="ensure-item">
+						<div class="item-inner">
+							<i class="icon icon-f3"></i>
+							<p class="text2">网易品质保证</p>
+						</div>
+					</li>
+				</ul>
+				<hr>
+				<div class="m-siteInfo">
+					<nav class="nav-1">
+						<a class="text2 text2-color" href="javascript:;">关于我们</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">售后服务</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">商务合作</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">企业采购</a>
+						<b class="split">|</b>
+						<a class="text2 text2-color" href="javascript:;">友情链接</a>
+					</nav>
+					<p class="copyright">
+						网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+					</p>
+					<a class="businessAdmin" href="javascript:;">
+						<img src="./images/admin.gif" width="36" height="39" alt="" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/标题固定.js"></script>
+	<script src="js/动态菜单.js"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+		    //定义i变量为动态控制图片轮播做准备，i的值与每张图片进行一一的对应
+		    var i=0;
+		    //时间变量，为自动轮播以及对光标的影响做出相应的反应
+		    var timer=null;
+		    //根据图片的张数动态添加圆点个数
+		    for (var j = 0; j < $('.img>div').length; j++) {
+		        $('.num').append('<li></li>');
+		    }
+			//console.log($('.img>div').length)
+		    //默认情况下的第一个圆点进行背景设计
+		    $('.num li').first().addClass('active');
+		    //根据光标的影响控制按钮的显示和隐藏
+		    $('.banner').hover(function(){
+		        $('.btn').show();
+		    },function(){
+		        $('.btn').hide();
+		    });
+		    //将第一张图片复制并添加到img部分下与前五张图片相接
+		    var firstimg=$('.img>div').first().clone(); //复制第一张图片
+		    $('.img').append(firstimg).width($('.img>div').length*('.img>div').length*($('.img li').width())*4+192);
+			//console.log($('.img li').width());
+		    //定时器自动轮播
+		    timer=setInterval(function(){
+		        i++;
+		        if (i==$('.img>div').length) {
+		            i=1;
+		            $('.img').css({left:0});//保证无缝轮播，设置left值
+		        }
+		        //进行下一张图片
+		        $('.img').stop().animate({left:-i*1032},500);
+		        //圆点跟着变化
+		        if (i==$('.img>div').length-1) {
+		            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+		        }else{
+		            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+		        }
+		    },5000);
+		    //鼠标移入，暂停自动播放，移出，开始自动播放
+		    $('.banner').hover(function(){
+		        clearInterval(timer);
+		    },function(){
+		        timer=setInterval(function(){
+		            i++;
+		            if (i==$('.img>div').length) {
+		                i=1;
+		                $('.img').css({left:0});
+		            };
+		            //进行下一张图片
+		            $('.img').stop().animate({left:-i*1032},500);
+		            //圆点跟着变化
+		            if (i==$('.img>div').length-1) {
+		                $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+		            }else{
+		                $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+		            }
+		        },5000)
+		    });
+		    //上一个按钮
+		    $('.prev').click(function(){
+		        i--;
+		        if (i==-1) {
+		            i=$('.img>div').length-2;
+		            $('.img').css({left:-($('.img>div').length-1)*1032});
+		        }
+		        $('.img').stop().animate({left:-i*1032},500);
+		        $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+		    });
+		    // 下一个按钮
+		    $('.next').click(function(){
+		        i++;
+		        if (i==$('.img>div').length) {
+		            i=1; //这里不是i=0
+		            $('.img').css({left:0});
+		        };
+		        $('.img').stop().animate({left:-i*1032},500);
+		        if (i==$('.img>div').length-1) { //设置小圆点指示
+		            $('.num li').eq(0).addClass('active').siblings().removeClass('active');
+		        }else{
+		            $('.num li').eq(i).addClass('active').siblings().removeClass('active');
+		        };
+		 
+		    });
+		    //鼠标划入圆点
+		    $('.num li').mouseover(function(){
+		        var _index=$(this).index();
+		        //维持i变量控制的对应关系不变
+		        i = _index;                 
+		        $('.img').stop().animate({left:-_index*1032},300);
+		        $('.num li').eq(_index).addClass('active').siblings().removeClass('active');
+		    });
+		    
+		    $(".color").click(function(){
+		    	$(".selected").removeClass("y3");
+		    	$(this).addClass("y3");
+		    	
+		    })
+		 $(".g2").click(function(){
+		    	$(".gselected").removeClass("g3");
+		    	$(this).addClass("g3");
+		    	
+		    })
+		})
+		function showimg(url)
+		{
+			$('#frame1').attr('src', url);
+		}
+	</script>
+		<script type="text/javascript">
+			window.alert = alert;
+			function alert(data) {
+				var a = document.createElement("div"),
+					p = document.createElement("p"),
+					btn = document.createElement("div"),
+					textNode = document.createTextNode(data ? data : ""),
+					btnText = document.createTextNode("确定");
+				// 控制样式
+				css(a, {
+					"position": "fixed",
+					"left": "50%",
+					"top": "50%",
+					"width": "400px",
+					"height":"150px",
+					"background-color": "white",
+					"font-size": "20px",
+					"text-align": "center",
+					"color":"#333",
+					"z-index":"999",
+					"box-shadow":"1px 1px 8px rgba(0, 0, 0, .2)"
+				});
+				css(p, {
+					"margin-top":"40px",
+					"background":"url('img/正确 (2).png') no-repeat",
+					"background-position":"50px",
+				})
+				css(btn, {
+					"position":"relative",
+					"top":"30px",
+					"left": "150px",
+					"width": "100px",
+					"height":"30px",
+					"line-height":"30px",
+					"font-size":"16px",
+					"background-color": "#e98f36",
+					"border-radius":"50px",
+					"cursor":"pointer",
+				})
+//				css(btnText, {
+//					"color":"black",
+//				})
+				// 内部结构套入
+				p.appendChild(textNode);
+				btn.appendChild(btnText);
+				a.appendChild(p);
+				a.appendChild(btn);
+				// 整体显示到页面内
+				document.getElementsByTagName("body")[0].appendChild(a);
+				// 确定绑定点击事件删除标签
+				btn.onclick = function() {
+					a.parentNode.removeChild(a);
+				}
+			}
+			function css(targetObj, cssObj) {
+				var str = targetObj.getAttribute("style") ? targetObj.getAttribute("style") : "";
+				for(var i in cssObj) {
+					str += i + ":" + cssObj[i] + ";";
+				}
+				targetObj.style.cssText = str;
+			}
+	    var detail=new Vue({
+		el: "#zhengti",
+		data:{
+			good_detail:"",
+			utelephone:utel,
+			good_end:{
+				name:"",
+				p_id:p_id,
+				colorimg:"",
+				num:1,
+				size:"",
+				price:""
+			}
+		},
+		methods: {
+		init:function(){
+			var _self=this;
+		
+			$.ajax(
+			{
+				url:"http://localhost:8080/wangyi/user/detail",
+				// url:'json/detail.json',
+				dataType:'text',
+				type:'get',
+				data:{
+					pro_id:p_id
+				},
+				success:function(result){
+					var rs = $.parseJSON(result);
+					_self.good_detail = rs[0];//去掉中括号
+				}
+			});
+		},
+		buy:function(){
+			var _self=this.good_end;
+			$.ajax(
+			{
+				url:'http://localhost:8080/wangyi/submit',
+				dataType:'text',
+				type:'post',
+				data:{
+					id:_self.p_id,
+					num:_self.num,
+					utel:utel
+				},
+				success:function(result){
+					console.log(result);
+					var rs = $.parseJSON(result);
+					if(rs.status=="success"){
+							var url = "dingdan2.html?utel="+utel+"&p_id="+p_id;z
+							window.location.href=url;
+						}
+						else{
+							var url2 = "dingdan1.html?utel="+utel+"&p_id="+p_id;
+							window.location.href=url2;
+						}
+				}
+			});
+		},
+		addto:function(){
+			var _self=this.good_end;
+			var _self1=this.good_detail;
+			$.ajax(
+			{
+				url:'http://localhost:8080/wangyi/product/join',
+				dataType:'text',
+				data:{
+					p_id:_self.p_id,
+					colorimg:_self.colorimg,
+					name:_self1.name,
+					num:_self.num,
+					price:_self1.price,
+					utel:utel,
+					size:_self.size
+				},
+				type:'post',
+				success:function(result){
+					console.log(result);
+					if(result){
+						alert('已成功加入购物车')
+							//window.location.href="shopping_cart.html";
+							//return document.getElementById('addsuccess').style.display='block';
+								vss.init()
+						}
+						else{
+							alert('加入购物车失败');
+							//return document.getElementById('tishi').innerHTML = result.info;
+						}
+				}
+			});
+		},
+		imgcolor:function(img){
+			console.log(img)
+			this.good_end.colorimg=img;
+		},
+		size:function(str){
+			console.log(str)
+			this.good_end.size=str;
+		},
+		sub:function(){
+			this.good_end.num=this.good_end.num-1;
+		},
+		add:function(){
+			this.good_end.num=this.good_end.num+1;
+		},
+		showimg:function (url)
+		{
+			$('#frame1').attr('src', url);
+		}
+		
+		
+		}
+		});
+		detail.init();
+	</script>
+</html>
+
+

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>严选我的购物车</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<link rel="stylesheet" type="text/css" href="css/phone_load.css"/>
+		<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+		<link rel="stylesheet" type="text/css" href="css/detail.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
+		<link rel="stylesheet" type="text/css" href="css/search_text.css"/>
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/params.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var utel = window_request_paramter("utel");
+			var p_id = window_request_paramter("p_id");
+		</script>
+		<style type="text/css">
+			#coupon{
+				position: relative;
+				border: #D8CEBC 1px solid;
+				top: 0px;
+				width: 1090px;
+				top: 10px;
+				margin: 0 auto;
+			}
+			
+			.coupons{
+				float: left;
+				
+			}
+			
+			#key{
+				float: left;
+				border-top: #DDD 1px solid;
+				border-bottom: #DDD 1px solid;
+				margin-top: 10px;
+				width: 1090px;
+				height: 50px;
+				/*margin-left: 150px;*/
+				background-color: #f5f5f5;
+				line-height: 50px;
+			}
+			
+			.keys{
+				float: left;
+			}
+			
+			#shangpin{
+				position: relative;
+				border: #D8CEBC 1px solid;
+				width: 1090px;
+				/*left: 150px;*/
+				bottom: 10px;
+				margin-top: 20px;
+			}
+			#like{
+				float: left;
+				font-size: 17px;
+				width: 1068px;
+				height: 44px;
+				line-height: 44px;
+				padding-left: 22px;
+				background-color: rgb(245, 245, 245);
+			}
+			#pay{
+				float: left;
+				border-top: #D8CEBC 1px solid;
+				border-bottom: #D8CEBC 1px solid;
+				margin-top: 10px;
+				margin-bottom: 20px;
+				width: 1090px;
+				height: 60px;
+				background-color: rgb(245, 245, 245);
+				line-height: 50px;
+			}
+			.pays_left{
+				float: left;
+			}
+			
+			.pays_right{
+				float: right;
+			}
+			.num1{
+				/*border: #000000 1px solid;*/
+			}
+			.topay{
+				/*border: rgb(192, 174, 138) 1px solid;*/
+				width: 120px;
+				height: 61px;
+				line-height: 61px;
+				text-align: center;
+				background-color: rgb(192, 174, 138);
+			}
+			.topay:hover{
+				background-color: rgb(202, 184, 148);
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="header">
+			<div id="top">
+				<div style="line-height: 36px;float: left ;color:#ccc;margin-left:20% ;">
+					<p>好的生活，没那么贵</p>
+				</div>
+				<div id="nav">
+					<div class="title">
+						<a href="#" class="title-nav">我的订单</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">会员</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">甄选家</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">企业采购</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">客户服务</a>
+					</div>
+					<div class="title">
+						<a href="#" class="title-nav">APP</a>
+					</div>
+				</div>
+			</div>
+			<div id="low">
+				<div>
+					<a href="index.html" class="tab-logo"></a>
+				</div>
+				<div class="search">
+					<input type="text"maxlength="100" placeholder="新人大促销" class="search_text" id="idNumber1"/>
+					<a class="icon-search" href="#" id="searchid"></a>
+					<a class="icon-cart" href="#"> </a>
+					<a v-bind:href="'shopping_cart.html?utel='+utel" class="cart-num">{{num.num}}</a>
+				</div>
+				<div class="wrap wrap-display wrap0">
+						<div class="m-hot-search-words">
+								<ul class="search_list">
+									<li class="search_list_item"><font color="#999">历史搜索</font><img src="img/icon_search_del.png" class="history search_list_item" id="his-dele"></li>
+									<div class="delete history">
+									</div>
+									<li class="search_list_item"><font color="#999">大家都在搜</font></li>
+										<li class="search_list_item hot">鞋包3件85折</li>
+										<li class="search_list_item hot">午睡神器特惠</li>
+										<li class="search_list_item hot">床垫</li>
+										<li class="search_list_item hot">服饰买2免1</li>
+										<li class="search_list_item hot">反季特惠</li>
+								</ul>
+						</div>
+				</div>
+			</div>
+			<div id="nav-1">
+			<div id="main-nav">
+					<ul class="nav">
+						<li class="nav-item">
+							<a href="#" class="topLevel" >首页</a>
+						</li>
+						<li class="nav-item" v-for="nav in firstnav" >
+							<a class="topLevel" href="#">{{nav.name}}</a>
+							<ul class="card-list">
+								<div class="card">
+									<li class="item" v-for="nav_2 in nav.card_list">
+										<a class="nav-subCate" href="javascript:;">
+											<img class="icon" v-bind:src="nav_2.img" />
+											<p class="text">{{nav_2.card_name}}</p>
+										</a>
+									</li>
+									
+								</div>
+							</ul>
+						</li>	
+						
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+		</div>
+        <hr style="color: #F5F5DC;" />
+		<div id="coupon">
+			<div class="coupons" style="margin-top: 5px;margin-left: 10px;">
+				<img src="img/优惠券.png" />
+			</div>
+			<div class="coupons" style="margin-top: 5px;margin-left: 20px;">
+			 <font size="2px"> 购物车可领优惠券</font>
+			</div>
+			<div class="coupons" style="margin-left: 820px;margin-top: 8px;">
+				<a href="#" style="color:indianred;font-size: 12px;border: indianred 1px solid;">查看优惠券▷</a>
+			</div>
+			
+				<div class="cart-box-body">
+					<template v-if="goods_list.length">
+						<div id="key">
+							<div class="keys">
+								<input type="checkbox" v-model="all"  id="all" v-on:change="select"  style="margin-left: 20px;"/><font size="2px" style="margin-left: 10px;">全选</font>
+							</div>
+							<div class="keys">
+								<font size="2px" style="margin-left: 140px;">商品信息</font>
+							</div>
+							<div class="keys">
+								<font size="2px" style="margin-left: 270px;">单价</font>
+							</div>
+							<div class="keys">
+								<font size="2px" style="margin-left: 175px;">数量</font>
+							</div>
+							<div class="keys">
+								<font size="2px" style="margin-left: 120px;">小计</font>
+							</div>
+							<div class="keys">
+								<font size="2px" style="margin-left: 80px">操作</font>
+							</div>
+						</div>
+						
+							<div v-for="goods in goods_list" class="cart-product">
+									<div class="product-select"><input type="checkbox" v-model="boxs" v-bind:value="goods.id"  v-bind:title="goods.id" /></div>
+									<div>
+									<div class="product">
+										<img v-bind:src="goods.img" class="product-img">
+										<div class="product-info">
+											<a v-bind:href="'detail.html?id='+goods.id" class="product-name">{{goods.name}}</a>
+											<p class="product-size">{{goods.size}}</p>
+										</div>
+										
+										
+									</div>
+									</div>
+									<div class="product-price">￥{{ goods.price }}</div>
+									<div class="product-num">
+										<div class="selnum">
+												<a href="javascript:;" v-on:click="sub(goods)" class="less">-</a>
+												<input type="text" size="5" :value="goods.num" v-model="goods.num"  class="input-product"/>
+												<a href="javascript:;" v-on:click="add(goods)" class="more">+</a>
+										</div>
+									</div>
+									<div class="product-allprice">￥{{ goods.price * goods.num}}</div>
+									<div class="product-fun">
+											<a href="#">移入收藏夹</a>
+											<a href="javascript:;" v-on:click="remove(goods)">删除</a>
+									</div>
+							</div>
+					<div id="pay">
+						<div class="pays_left">
+							<input type="checkbox" v-model="all"   v-on:change="select" style="margin-left: 20px;"/><font size="2px" style="margin-left: 10px;">已选</font>
+						</div>
+						<div class="pays_left num1">
+							<font size="2px" style="float:left margin-left: 5px;width: 5px;">({{count}})</font>
+						</div>
+						<div class="pays_left">
+							<a href="javascript:;" v-on:click="removesome()" style="margin-left: 50px;font-size: 13px;">批量删除</a>
+						</div>
+						<div class="pays_left">
+							<a href="#" style="margin-left: 30px;font-size: 13px;">清空失效商品</a>
+						</div>
+						
+						<div class="pays_right topay" style="margin-right: 0px;">
+							<a style="font-size: 16px;color: white;" v-on:click="submit">下单</a>
+						</div>
+						<div class="pays_right" style="height: 60px;margin-right: 10px;">
+							<font style="color: rgb(190, 65, 65);font-size: 20px;font-weight: 600;"> ￥{{total}}</font>
+						</div>
+						<div class="pays_right" style="margin-right: 0px;">
+							<font size="4px" >应付总额：</font>
+						</div>
+					</div>
+					</template>
+					<template v-else>
+							<div>购物车为空</div>
+					</template>
+			</div>
+			<!--轮播图整体div-->
+			<h3 id="like">猜你喜欢</h3>
+			<div class="banner">
+				<!--无序列表承载轮播的图片-->
+				<div class="img">
+					<div>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun1.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">100%纯棉女式纯棉V领T恤</a></div>
+							<div class="ljiage">¥49</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun2.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">男式基础色织纯棉圆领T恤</a></div>
+							<div class="ljiage">¥29.9</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun3.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">女式荧光字母印花T恤</a></div>
+							<div class="ljiage">¥89</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun4.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">女式复古字母T恤衫</a></div>
+							<div class="ljiage">¥89</div>
+						</div>
+					</li>
+					</div>
+					<div>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun1.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">100%纯棉女式纯棉V领T恤</a></div>
+							<div class="ljiage">¥49</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun2.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">男式基础色织纯棉圆领T恤</a></div>
+							<div class="ljiage">¥29.9</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun3.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">女式荧光字母印花T恤</a></div>
+							<div class="ljiage">¥89</div>
+						</div>
+					</li>
+					<li class="lun-item">
+						<div class="limg">
+							<a href="#"><img src="img/lun4.png" width="210px" height="210px" /></a>
+						</div>
+						<div class="lcontent">
+							<div class="lpinming"><a href="#">女式复古字母T恤衫</a></div>
+							<div class="ljiage">¥89</div>
+						</div>
+					</li>
+					</div>
+				</div>
+				<!--用来放置圆点具体实施在js代码中呈现-->
+				<ul class="num"></ul>
+				<!--左右点击按钮-->
+				<div class="btn">
+					<span class="prev">
+						<img src="img/箭头左.png" style="width: 50px;height: 50px" >
+					</span>
+					<span class="next"><img src="img/箭头右.png" style="width: 50px;height: 50px;"></span>
+				</div>
+			</div>
+					
+		</div>
+	
+		
+		<div id="footer1">
+			<div class="foot-ensure-item ensure-item11">
+				<h4 class="text-title">客户服务</h4>
+				<div class="ensure-item1">
+					<div class="ensure-item1-content">
+						<div id="image_s">
+							<img src="images/service.png"width="40px" height="40px" >
+							<p>在线客服</p>
+						</div>
+					</div>
+					<div class="ensure-item1-content">
+						<div id="image_s">
+							<img src="images/消息.png"width="40px" height="40px" >
+							<p>用户反馈</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="foot-ensure-item">
+				<h4 class="text-title">何为严选</h4>
+					<div id="ensure-item2">
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;网易原创生活类电商品牌，秉承网易一贯的严谨态度，我们深入世界各地，从源头全程严格把控商品生产环节，力求帮消费者甄选到优质的商品</p>
+					</div>
+				
+					<div id="guanzhu">
+						关注我们：
+					</div>
+					<div id="wqx">
+						<img src="images/wtx.png" height="32px" >
+					</div>
+			</div>
+			<div class="foot-ensure-item ensure-item33">
+				<h4 class="text-title">扫码下载严选APP</h4>
+					<div id="ensure-item3">
+						<img src="images/qr.png"  >
+					</div>
+			</div>
+		</div>
+		<div class="footer2">
+			<div class="footer2-ensure-item">
+				<div class="first-row">
+					<ul class="ensure">
+						<li class="ensure-item">
+							<div class="item-inner">
+								<i class="icon icon-f1"></i>
+								<p class="text2">30天无忧退货</p>
+							</div>
+						</li>
+						<li class="ensure-item">
+							<div class="item-inner">
+								<i class="icon icon-f2"></i>
+								<p class="text2">满88元免邮费</p>
+							</div>
+						</li>
+						<li class="ensure-item">
+							<div class="item-inner">
+								<i class="icon icon-f3"></i>
+								<p class="text2">网易品质保证</p>
+							</div>
+						</li>
+					</ul>
+					<hr>
+					<div class="m-siteInfo">
+						<nav class="nav-1">
+							<a class="text2 text2-color" href="javascript:;">关于我们</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">帮助中心</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">售后服务</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">配送与检验</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">商务合作</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">企业采购</a>
+							<b class="split">|</b>
+							<a class="text2 text2-color" href="javascript:;">友情链接</a>
+						</nav>
+						<p class="copyright">
+							网易公司版权所有 © 1997-2017&nbsp&nbsp&nbsp食品经营许可证：JY13301080111719
+						</p>
+						<a class="businessAdmin" href="javascript:;">
+							<img src="./images/admin.gif" width="36" height="39" alt="" />
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</body>
+	<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/动态菜单.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/标题固定.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/lunbo_cart.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cartnum.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			var vue=new Vue({
+	        el: ".cart-box-body",
+	        data:{
+						boxs:[],
+						all:"",
+						goods_list:[],
+					},
+					methods: {
+					init:function(){
+						var _self=this;
+	
+						$.ajax(
+						{
+							url:'http://localhost:8080/wangyi/yanxuan/cart',
+							dataType:'text',
+							type:'get',
+							data:{
+								utel:utel
+							},
+							success:function(result){
+								var rs = $.parseJSON(result);
+								_self.goods_list = rs;
+								console.log(rs)
+							}
+						});
+					},
+					submit:function(){
+						for(var i=0;i<this.boxs.length;i++)
+						{
+							for(var j=0;j<this.goods_list.length;j++)
+							{
+								if(this.boxs[i]==this.goods_list[j].id)
+								{
+									var _self=this.goods_list[j];
+									$.ajax(
+									{
+										url:'http://localhost:8080/wangyi/submit',
+										dataType:'text',
+										type:'post',
+										data:{
+											id:_self.goods_id,
+											num:_self.num,
+											utel:utel
+										}
+									});
+									console.log("成功提交")
+									break;
+								}
+							}
+						};
+						var url = "dingdan1.html?utel="+utel;
+						window.location.href = url;
+					},
+					changeNumber: function (goods, event) {
+							var obj = $(event.target);
+							goods.num = parseInt(obj.val());
+					},
+					add: function (goods) {
+						goods.num = parseInt(goods.num+1);
+					},
+					sub: function (goods) {
+						goods.num = parseInt(goods.num-1);
+					},
+					remove: function (goods) {
+							for(var i=0;i<this.goods_list.length;i++)
+							{
+								if(this.goods_list[i]==goods){
+									var _self=this.goods_list[i];
+									$.ajax(
+									{
+										url:'http://localhost:8080/wangyi/delgood',
+										dataType:'text',
+										type:'post',
+										data:{
+											id:_self.id,
+											utel:utel
+										}
+									});
+									this.goods_list.splice(i,1);
+								}
+							}
+					},
+					removesome: function () {
+							for(var i=0;i<this.boxs.length;i++)
+							{
+									for(var j=0;j<this.goods_list.length;j++)
+									{
+										if(this.boxs[i]==this.goods_list[j].id)
+										{
+											var _self=this.goods_list[j];
+											$.ajax(
+											{
+												url:'http://localhost:8080/wangyi/delgood',
+												dataType:'text',
+												type:'post',
+												data:{
+													id:_self.id,
+													utel:utel
+												}
+											});
+											this.goods_list.splice(j,1);
+											break;
+										}
+									}
+							}
+					},
+					select:function(){
+						if(this.all){
+							this.boxs=[];
+							for(var i=0;i<this.goods_list.length;i++)
+							{
+								this.boxs.push(this.goods_list[i].id);
+							}
+						}else{
+							this.boxs=[];
+							}
+						}
+					},
+	        computed:{
+	            count : function(){
+	                var num = 0;
+	                for(var i in this.goods_list){
+	                    for(var j in this.boxs)
+							{
+								if(this.goods_list[i].id==this.boxs[j])
+								{
+									num += parseInt(this.goods_list[i].num);
+								}
+							}
+	                }
+	                return num;
+	            },
+	            total : function(){
+	                var total = 0;
+						for(var i in this.goods_list){
+								for(var j in this.boxs)
+								{
+									if(this.goods_list[i].id==this.boxs[j])
+									{
+										total += this.goods_list[i].price * this.goods_list[i].num;
+									}
+								}
+						}
+	                return total;
+	            },
+	        }
+	    });
+			vue.init();
+		</script>
+</html>
